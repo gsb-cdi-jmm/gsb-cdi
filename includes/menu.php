@@ -9,7 +9,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div name="gauche" style="float:left;width:<?php if (isset($_SESSION['connect'])){ ?>10%;<?php}else{ echo"18%"} ?>; background-color:#282828; height:100%;">
+	<div name="gauche" style="float:left;width:10%; background-color:#282828; height:100%;">
 		<?php if (isset($_SESSION['connect'])): ?>
 		<h2>Outils</h2>
 		<ul>
@@ -29,4 +29,4 @@
 		<?php endif; ?>
 	</div>
 	<div name="droite" style="float:left;width:80%; height:80%">
-		<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:#d7dcf2;padding:5;padding-left:15px;color:#5599EE;height:88%; /* mettre la taille quand il n'y a pas le menu */">
+		<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:#d7dcf2;padding:5;padding-left:15px;color:#5599EE;height:88%;/">
