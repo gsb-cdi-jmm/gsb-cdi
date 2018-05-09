@@ -1,0 +1,148 @@
+
+body, html {
+  height: 100%;
+  background-repeat: no-repeat;
+  background: rgb(40,40,40);
+  color: white;
+}
+
+/************************************/
+/* Début stylisation de page de login */
+/************************************/
+.login_box{
+    background:#f7f7f7;
+    border:3px solid #F4F4F4;
+    padding-left: 15px;
+    margin-bottom:25px;
+    }
+.input_title{
+    color:#5599EE;
+    padding-left:3px;
+        margin-bottom: 2px;
+    }
+
+hr{
+    width:100%;
+}
+
+
+.login_title{
+    font-family: "myriad-pro",sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    color:#5599EE;
+}
+
+.card-container.card {
+    max-width: 350px;
+
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius:0;
+    background:#43A6EB;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #d7dcf2;
+    /* just in case there no content*/
+    padding: 1px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 15%x;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.form-signin input{
+  color: #5599EE;
+}
+
+/************************************/
+/* Fin stylisation de page de login */
+/************************************/
+
+
+/************************************/
+/*        Les formulaires           */
+/************************************/
+ label.titre { width : 180 ;  clear:left; float:left; }
+ .zone {
+   float : left;
+   color:#5599EE;
+   border:1px solid #9FC6FF;
+   padding:5px;
+   margin-top: 5px;
+   /*arrondir les coins en haut à gauche et en bas à droite*/
+   -moz-border-radius:10px;
+   -webkit-border-radius:10px;
+   border-radius:5px;
+ }
+
+/************************************/
+/*        Fin des formulaires       */
+/************************************/
