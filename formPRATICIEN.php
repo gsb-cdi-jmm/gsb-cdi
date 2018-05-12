@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 	<title>formulaire PRATICIEN</title>
@@ -27,6 +28,7 @@
 	   }
 	</script>
 <?php
+include("includes/estConnect.php");
 include("includes/connexionBdd.php");
 include("includes/head.php");
 include("includes/menu.php");
