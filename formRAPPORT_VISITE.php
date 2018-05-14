@@ -30,12 +30,12 @@
 			liste.setAttribute("class", "zone");
 			//remplit la liste avec les valeurs de la premiére liste construite en PHP � partir de la base
 			liste.innerHTML = formRAPPORT_VISITE.elements["PRA_ECH1"].innerHTML;
-			var qte = document.createElement("input");
+			var qte = document.createElement("select");
 			laDiv.appendChild(qte);
 			qte.setAttribute("name", "PRA_QTE" + pNumero);
-			qte.setAttribute("size", "2");
+			qte.setAttribute("size", "1");
 			qte.setAttribute("class", "zone");
-			qte.setAttribute("type", "text");
+			qte.innerHTML = formRAPPORT_VISITE.elements["PRA_QTE1"].innerHTML;
 			var bouton = document.createElement("input");
 			laDiv.appendChild(bouton);
 			//ajoute une gestion évenementielle en faisant évoluer le numéro de la ligne
@@ -52,11 +52,12 @@ include("includes/connexionBdd.php");
 include("includes/head.php");
 include("includes/menu.php");
 
-//Requte qui va nous permettre d'afficher tout les practiciens
+//Requete qui va nous permettre d'afficher tout les practiciens
 $reqSql = "SELECT praNom, praPrenom FROM praticien";
 $result = $connexion->query($reqSql);
 $ligne = $result->fetch();
 
+//Requete qui va permettre d'afficher tout les médicaments
 $reqSqlMed = "SELECT medNomcommercial FROM medicament";
 $resultMed = $connexion->query($reqSqlMed);
 $ligneMed = $resultMed->fetch();
@@ -97,6 +98,7 @@ $ligneMed = $resultMed->fetch();
 									$ligneMed = $resultMed->fetch();
 								} ?></option></select>
 			<label class="titre">PRODUIT 2 : </label><select name="PROD2" class="zone"><option value="*"><?php
+			//On reinitialise la liste de medicament au début pour pouvoir les afficher de nouveau
 			$resultMed2 = $connexion->query($reqSqlMed);
 			$ligneMed2 = $resultMed2->fetch();
 			while ($ligneMed2) {
@@ -108,8 +110,31 @@ $ligneMed = $resultMed->fetch();
 			<label class="titre"><h3>Echanitllons</h3></label>
 			<div class="titre" id="lignes">
 				<label class="titre">Produit : </label>
-				<select name="PRA_ECH1" class="zone"><option>Produits</option></select><input type="text" name="PRA_QTE1" size="2" class="zone" />
-				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />
+				<select name="PRA_ECH1" class="zone">
+					<option value="*"><?php
+				//On reinitialise la liste de medicament au début pour pouvoir les afficher de nouveau
+				$resultMed2 = $connexion->query($reqSqlMed);
+				$ligneMed2 = $resultMed2->fetch();
+				while ($ligneMed2) {
+										$medNom = $ligneMed2['medNomcommercial'];
+										echo "<option value='$medNom'>$medNom</option>";
+										$ligneMed2 = $resultMed2->fetch();
+									} ?>
+					</option>
+				</select>
+				<select name="PRA_QTE1"  size="1" class="zone">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />
 			</div>
 			<label class="titre">SAISIE DEFINITIVE :</label><input name="RAP_LOCK" type="checkbox" class="zone" checked="false" />
 			<label class="titre"></label>
