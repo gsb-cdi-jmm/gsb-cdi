@@ -51,12 +51,27 @@ include("includes/estConnect.php");
 include("includes/connexionBdd.php");
 include("includes/head.php");
 include("includes/menu.php");
+
+//Requte qui va nous permettre d'afficher tout les practiciens
+$reqSql = "SELECT praNom, praPrenom FROM praticien";
+$result = $connexion->query($reqSql);
+$ligne = $result->fetch();
+
+$reqSqlMed = "SELECT medNomcommercial FROM medicament";
+$resultMed = $connexion->query($reqSqlMed);
+$ligneMed = $resultMed->fetch();
  ?>
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
 			<h1> Rapport de visite </h1>
 		  <!-- On ajoute le numero directement grâce au nom de l'utilisateur -->
 			<label class="titre">DATE VISITE :</label> <input type="date" size="10" name="RAP_DATEVISITE" class="zone" /><br>
-			<label class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"></select>
+			<label class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"><option value="*"><?php
+			while ($ligne) {
+									$nom = $ligne['praNom'];
+									$prenom = $ligne['praPrenom'];
+									echo "<option value='$nom'>$nom $prenom</option>";
+									$ligne = $result->fetch();
+								} ?></option></select>
 			<label class="titre">REMPLACANT :</label><input type="checkbox" class="zone" checked="false" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');" />
 			<label class="titre">MOTIF :</label>
 				<select name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
@@ -75,8 +90,20 @@ include("includes/menu.php");
 					<option value="4">4</option>
 				</select>
 			<label class="titre"><h3> Eléments présentés </h3></label>
-			<label class="titre">PRODUIT 1 : </label><select name="PROD1" class="zone"></select>
-			<label class="titre">PRODUIT 2 : </label><select name="PROD2" class="zone"></select>
+			<label class="titre">PRODUIT 1 : </label><select name="PROD1" class="zone"><option value="*"><?php
+			while ($ligneMed) {
+									$medNom = $ligneMed['medNomcommercial'];
+									echo "<option value='$medNom'>$medNom</option>";
+									$ligneMed = $resultMed->fetch();
+								} ?></option></select>
+			<label class="titre">PRODUIT 2 : </label><select name="PROD2" class="zone"><option value="*"><?php
+			$resultMed2 = $connexion->query($reqSqlMed);
+			$ligneMed2 = $resultMed2->fetch();
+			while ($ligneMed2) {
+									$medNom = $ligneMed2['medNomcommercial'];
+									echo "<option value='$medNom'>$medNom</option>";
+									$ligneMed2 = $resultMed2->fetch();
+								} ?></option></select>
 			<label class="titre">DOCUMENTATION OFFERTE :</label><input name="RAP_DOC" type="checkbox" class="zone" checked="false" />
 			<label class="titre"><h3>Echanitllons</h3></label>
 			<div class="titre" id="lignes">
