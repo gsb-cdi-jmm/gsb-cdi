@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php
+//On vérifie qu'une session n'a pas déja été ouverte afin de ne pas réouvrir
+//une session en réutilisant cette page dans recupRAPPORT_VISITE.php
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+    //Il n'y a pas de seesion active
+    session_start();
+}
+
+ ?>
 <html>
 <head>
 	<title>formulaire RAPPORT_VISITE</title>
@@ -66,7 +75,7 @@ $ligneMed = $resultMed->fetch();
 			<h1> Rapport de visite </h1>
 		  <!-- On ajoute le numero directement grâce au nom de l'utilisateur -->
 			<label class="titre">DATE VISITE :</label> <input type="date" size="10" name="RAP_DATEVISITE" class="zone" /><br>
-			<label class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"><option value="*"><?php
+			<label class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"><option value=""><?php
 			while ($ligne) {
 									$nom = $ligne['praNom'];
 									$prenom = $ligne['praPrenom'];
