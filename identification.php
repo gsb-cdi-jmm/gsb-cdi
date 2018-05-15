@@ -15,9 +15,9 @@ $mdpbdd = $ligne['password'];
 $prenom = $ligne['visPrenom'];
 
 if ($mdpSaisie == $mdpbdd) {
-  echo "c'est bon";
   $_SESSION['connect'] = true;
   $_SESSION['prenom'] = $prenom;
+  header("Location: formRAPPORT_VISITE.php");
 }
 else {
   echo "<script>alert(\"Identifiant ou mot de passe incorect\")</script>";
