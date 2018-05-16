@@ -74,7 +74,7 @@ $ligneMed = $resultMed->fetch();
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
 			<h1> Rapport de visite </h1>
 		  <!-- On ajoute le numero directement grâce au nom de l'utilisateur -->
-			<label class="titre">DATE VISITE :</label> <input type="date" size="10" name="RAP_DATEVISITE" class="zone" /><br>
+			<label class="titre">DATE VISITE :</label> <input type="date" size="10" name="RAP_DATEVISITE" class="zone"<?php if (isset($_POST['RAP_DATEVISITE'])){echo "value='" . $_POST['RAP_DATEVISITE']."'";} ?><br>
 			<label class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"><option value=""><?php
 			while ($ligne) {
 									$nom = $ligne['praNom'];
@@ -84,7 +84,8 @@ $ligneMed = $resultMed->fetch();
 								} ?></option></select>
 			<label class="titre">REMPLACANT :</label><input type="checkbox" class="zone" checked="false" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');" />
 			<label class="titre">MOTIF :</label>
-				<select name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
+				<select name="RAP_MOTIF" class="zone" >
+					<option value=""></option>
 					<option value="PRD">Périodicité</option>
 					<option value="ACT">Actualisation</option>
 					<option value="REL">Relance</option>

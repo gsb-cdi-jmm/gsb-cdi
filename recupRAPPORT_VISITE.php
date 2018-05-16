@@ -20,24 +20,49 @@ if(isset($_POST['PRA_NUM']))
   $praNum = $repPra->fetch();
 }
 
+if(isset($_POST['RAP_BILAN'])){
+  $rapBilan = htmlentities($_POST['RAP_BILAN']);
+  if($rapBilan != ""){
+    //Si il y a du texte on protege les chaines de caracteres
+    $rapBilan = $connexion->quote($rapBilan);
+  }
+}
 
 if (isset($_POST['RAP_MOTIF'])) {
   $rapMotif = htmlentities($_POST['RAP_MOTIF']);
 }
 
+var_dump($rapMotif);
 
-echo "$matricule";
-echo $praNum['0'];
+//Requete recuperation du dernier practicien
+$reqLastPra = "SELECT max(rapNum) FROM rapportvisite WHERE praNum = \"" .$praNum['0'] . "\"";
+$repLastPra = $connexion->query($reqLastPra);
+$ligneLastPra = $repLastPra->fetch();
+if ($ligneLastPra['0'] == NULL) {
+  $ligneLastPra['0'] = 1;
+}
+else {
+  $ligneLastPra['0']++;
+}
+var_dump($rapBilan);
+echo "$rapBilan";
 
 //On vérifie que le praticien à rentrer toutes les informations correctements
 //On verifie que la date n'est pas vide
 if ($dateVisite != "") {
   //On vérifie que le practicien a été selectionné
   if ($practicien != "") {
-    $req = "INSERT INTO rapportvisite(visMatricule, praNum, rapDate) values('$matricule', " . $praNum['0'] . ", '$dateVisite')";
-    $rep = $connexion->exec($req) or die("Erreur dans la requete");
-    echo "$dateVisite";
-    echo "test";
+    //On vérifie que le Bilan a bien été rempli
+    if ($rapBilan != "") {
+          $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan .", " . $rapMotif . ")";
+          $rep = $connexion->exec($req) or die("Erreur dans la requete");
+          echo "test";
+    }
+    else {
+      echo "<h2 style=\"color:red;text-align:center\">Le bilan n'a pas été rempli</h2>";
+      include('formRAPPORT_VISITE.php');
+    }
+
   }
   else {
     echo "<h2 style=\"color:red;text-align:center\">Le practicien n'a pas été rempli</h2>";
