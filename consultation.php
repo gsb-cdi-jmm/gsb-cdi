@@ -8,7 +8,4 @@ include("includes/connexionBdd.php");
 include("includes/head.php");
 include("includes/menu.php");
  ?>
-	</div>
-</div>
-</body>
 </html>

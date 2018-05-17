@@ -4,7 +4,7 @@ if(isset($_SESSION['connect']))
 {
 }
 else {
-  header('Location: Index.php');
+  header('Location: index.php');
 }
 
 

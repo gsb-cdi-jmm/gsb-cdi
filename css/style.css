@@ -130,7 +130,7 @@ hr{
 /************************************/
 /*        Les formulaires           */
 /************************************/
- label.titre { width : 180 ;  clear:left; float:left; }
+ label.titre { width : 220px ;  clear:left; float:left; }
  .zone {
    float : left;
    color:#5599EE;
@@ -141,6 +141,16 @@ hr{
    -moz-border-radius:10px;
    -webkit-border-radius:10px;
    border-radius:5px;
+ }
+
+ #rapport {
+     display: flex;
+     justify-content: space-evenly;
+     flex-wrap: wrap;
+ }
+
+ .rapport-part {
+     min-width: 500px;
  }
 
 /************************************/
