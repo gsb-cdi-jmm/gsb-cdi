@@ -28,6 +28,10 @@ if(isset($_POST['RAP_BILAN'])){
   }
 }
 
+if (isset($_POST['PROD1'])) {
+  // code...
+}
+
 if (isset($_POST['RAP_MOTIF'])) {
   $rapMotif = htmlentities($_POST['RAP_MOTIF']);
   //On verifie quelle valeur à pris le motif afin de lui attribuer une valeure compréhensible
@@ -48,6 +52,10 @@ if (isset($_POST['RAP_MOTIF'])) {
       $rapMotif = 'Autre';
       break;
   }
+}
+
+if (isset($_POST['CoeffConf'])) {
+  $coeffConf = $_POST['CoeffConf'];
 }
 
 
@@ -71,13 +79,22 @@ if ($dateVisite != "") {
     if ($rapBilan != "") {
       //On vérifie que le motif à bien été rempli
       if ($rapMotif != "") {
-        $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif')";
-        echo "$req <br />";
-        echo $ligneLastPra['0'] . "<br />";
-        echo $praNum['0'] ."<br />";
-        $rep = $connexion->exec($req) or die("Erreur dans la requete");
-        echo "test";
-        echo "$req";
+        //On vérifie si le coefficient de confiance a été rempli
+        if ($coeffConf != "") {
+          //Maintenant on vérifie les éléments présenter
+
+          $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffCOnf) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf)";
+          echo "$req <br />";
+          echo $ligneLastPra['0'] . "<br />";
+          echo $praNum['0'] ."<br />";
+          $rep = $connexion->exec($req) or die("Erreur dans la requete");
+          echo "test";
+          echo "$req";
+        }
+        else {
+          echo "<h2 style=\"color:red;text-align:center\">Le Coéfficient de confiance n'a pas été rempli</h2>";
+          include('formRAPPORT_VISITE.php');
+        }
       }
       else {
         echo "<h2 style=\"color:red;text-align:center\">Le motif n'a pas été rempli</h2>";

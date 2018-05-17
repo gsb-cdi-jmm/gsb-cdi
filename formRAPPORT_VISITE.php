@@ -104,10 +104,11 @@ $ligneMed = $resultMed->fetch();
                 <textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
             <label class="titre">COEFFICIENT DE CONFIANCE :</label>
                 <select name="CoeffConf">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
                 </select>
         </div>
         <div class="rapport-part">
@@ -125,7 +126,7 @@ $ligneMed = $resultMed->fetch();
                     </option>
                 </select>
 
-            <label class="titre">PRODUIT 2 :</label>
+            <label class="titre">PRODUIT 2 : (Seulement si présenté)</label>
                 <select name="PROD2" class="zone">
                     <option value="*">
                         <?php
@@ -172,7 +173,6 @@ $ligneMed = $resultMed->fetch();
                 </select>
                 <input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone"/>
             </div>
-            <label class="titre">SAISIE DEFINITIVE</label><input name="RAP_LOCK" type="checkbox" class="zone"/>
             <label class="titre"></label>Confirmation
                 <input type="reset" value="annuler"/>
                 <input type="submit"/>
