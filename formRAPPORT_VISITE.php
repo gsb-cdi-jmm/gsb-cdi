@@ -54,7 +54,7 @@ if ($status == PHP_SESSION_NONE) {
             bouton.setAttribute("class", "zone");
             bouton.setAttribute("id", "but" + pNumero);
         }
-    </script>
+    </script>      
 <?php
 include("includes/estConnect.php");
 include("includes/connexionBdd.php");

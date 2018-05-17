@@ -3,7 +3,7 @@
 	$hote="localhost";
 	$login="root";
 	$mdp="";
-	$nombd="gsb-cr";
+	$nombd="gsb-cr2";
 
 	// Connection au serveur
 	try {

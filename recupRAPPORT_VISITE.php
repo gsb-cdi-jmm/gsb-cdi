@@ -15,7 +15,7 @@ if(isset($_POST['PRA_NUM']))
 {
   $practicien = htmlentities($_POST['PRA_NUM']);
   //Requete pour récuperer le numero du practicien
-  $reqPractien = "SELECT `praNum` FROM `praticien` WHERE `praNom` = \"$practicien\"";
+  $reqPractien = "SELECT praNum FROM praticien WHERE praNom = \"$practicien\"";
   $repPra = $connexion->query($reqPractien);
   $praNum = $repPra->fetch();
 }
@@ -26,10 +26,6 @@ if(isset($_POST['RAP_BILAN'])){
     //Si il y a du texte on protege les chaines de caracteres
     $rapBilan = $connexion->quote($rapBilan);
   }
-}
-
-if (isset($_POST['PROD1'])) {
-  // code...
 }
 
 if (isset($_POST['RAP_MOTIF'])) {
@@ -59,6 +55,18 @@ if (isset($_POST['CoeffConf'])) {
 }
 
 
+if (isset($_POST['PROD1'])) {
+  $produit1 = $_POST['PROD1'];
+  //On recupere medDepotlegal grâce à une requete et le nom du produit
+  $reqProd1 = "SELECT medDepotlegal FROM medicament WHERE medNomcommercial = '$produit1'";
+  $repProd1 = $connexion->query($reqProd1);
+  $medicament1 = $repProd1->fetch();
+}
+
+var_dump($medicament1['0']);
+
+var_dump($produit1);
+
 //Requete recuperation du dernier practicien
 $reqLastPra = "SELECT max(rapNum) FROM rapportvisite WHERE praNum = \"" .$praNum['0'] . "\"";
 $repLastPra = $connexion->query($reqLastPra);
@@ -82,14 +90,23 @@ if ($dateVisite != "") {
         //On vérifie si le coefficient de confiance a été rempli
         if ($coeffConf != "") {
           //Maintenant on vérifie les éléments présenter
+          if ($produit1 != "") {
+            //Requete insertion dans rapport visite
+            $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf)";
+            echo "$req";
+            $rep = $connexion->exec($req) or die("Erreur dans la requete");
 
-          $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffCOnf) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf)";
-          echo "$req <br />";
-          echo $ligneLastPra['0'] . "<br />";
-          echo $praNum['0'] ."<br />";
-          $rep = $connexion->exec($req) or die("Erreur dans la requete");
-          echo "test";
-          echo "$req";
+            //Requete insertion dans presenter
+            $reqPres = "INSERT INTO presenter (rapNumP, medDepotlegal) VALUES (" . $ligneLastPra['0'] . ", '3MYC7');";
+            echo "$reqPres";
+            $repPres = $connexion->exec($reqPres) or die("Erreur dans la requete");
+
+            echo "<br /><br />La requete est bonne";
+          }
+          else{
+            echo "<h2 style=\"color:red;text-align:center\">Le premier produit n'a pas été complété</h2>";
+            include('formRAPPORT_VISITE.php');
+          }
         }
         else {
           echo "<h2 style=\"color:red;text-align:center\">Le Coéfficient de confiance n'a pas été rempli</h2>";

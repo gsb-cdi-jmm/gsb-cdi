@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 09 mai 2018 à 16:03
+-- Généré le :  jeu. 17 mai 2018 à 16:06
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -89,25 +89,25 @@ CREATE TABLE `famille` (
 
 INSERT INTO `famille` (`famCode`, `famLibelle`) VALUES
 ('AA', 'Antalgiques en association'),
-('AAA', 'Antalgiques antipyrÃ©tiques en association'),
-('AAC', 'AntidÃ©presseur d\'action centrale'),
+('AAA', 'Antalgiques antipyrétiques en association'),
+('AAC', 'Antidépresseur d\'action centrale'),
 ('AAH', 'Antivertigineux antihistaminique H1'),
 ('ABA', 'Antibiotique antituberculeux'),
-('ABC', 'Antibiotique antiacnÃ©ique local'),
-('ABP', 'Antibiotique de la famille des bÃ©ta-lactamines (pÃ©nicilline A)'),
+('ABC', 'Antibiotique antiacnéique local'),
+('ABP', 'Antibiotique de la famille des béta-lactamines (pénicilline A)'),
 ('AFC', 'Antibiotique de la famille des cyclines'),
 ('AFM', 'Antibiotique de la famille des macrolides'),
 ('AH', 'Antihistaminique H1 local'),
-('AIM', 'AntidÃ©presseur imipraminique (tricyclique)'),
-('AIN', 'AntidÃ©presseur inhibiteur sÃ©lectif de la recapture de la sÃ©rotonine'),
+('AIM', 'Antidépresseur imipraminique (tricyclique)'),
+('AIN', 'Antidépresseur inhibiteur sélectif de la recapture de la sérotonine'),
 ('ALO', 'Antibiotique local (ORL)'),
-('ANS', 'AntidÃ©presseur IMAO non sÃ©lectif'),
+('ANS', 'Antidépresseur IMAO non sélectif'),
 ('AO', 'Antibiotique ophtalmique'),
 ('AP', 'Antipsychotique normothymique'),
 ('AUM', 'Antibiotique urinaire minute'),
-('CRT', 'CorticoÃ¯de, antibiotique et antifongique Ã   usage local'),
+('CRT', 'Corticoïde, antibiotique et antifongique à  usage local'),
 ('HYP', 'Hypnotique antihistaminique'),
-('PSA', 'Psychostimulant, antiasthÃ©nique');
+('PSA', 'Psychostimulant, antiasthénique');
 
 -- --------------------------------------------------------
 
@@ -188,34 +188,34 @@ CREATE TABLE `medicament` (
 --
 
 INSERT INTO `medicament` (`medDepotlegal`, `medNomcommercial`, `famCode`, `medComposition`, `medEffets`, `medContreindic`, `medPrixechantillon`) VALUES
-('3MYC7', 'TRIMYCINE', 'CRT', 'Triamcinolone (acÃ©tonide) + NÃ©omycine + Nystatine', 'Ce mÃ©dicament est un corticoÃ¯de Ã   activitÃ© forte ou trÃ¨s forte associÃ© Ã   un antibiotique et un antifongique, utilisÃ© en application locale dans certaines atteintes cutanÃ©es surinfectÃ©es.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants, d\'infections de la peau ou de parasitisme non traitÃ©s, d\'acnÃ©. Ne pas appliquer sur une plaie, ni sous un pansement occlusif.', NULL),
-('ADIMOL9', 'ADIMOL', 'ABP', 'Amoxicilline + Acide clavulanique', 'Ce mÃ©dicament, plus puissant que les pÃ©nicillines simples, est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux pÃ©nicillines ou aux cÃ©phalosporines.', NULL),
-('AMOPIL7', 'AMOPIL', 'ABP', 'Amoxicilline', 'Ce mÃ©dicament, plus puissant que les pÃ©nicillines simples, est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux pÃ©nicillines. Il doit Ãªtre administrÃ© avec prudence en cas d\'allergie aux cÃ©phalosporines.', NULL),
-('AMOX45', 'AMOXAR', 'ABP', 'Amoxicilline', 'Ce mÃ©dicament, plus puissant que les pÃ©nicillines simples, est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'La prise de ce mÃ©dicament peut rendre positifs les tests de dÃ©pistage du dopage.', NULL),
-('AMOXIG12', 'AMOXI GÃ©', 'ABP', 'Amoxicilline', 'Ce mÃ©dicament, plus puissant que les pÃ©nicillines simples, est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux pÃ©nicillines. Il doit Ãªtre administrÃ© avec prudence en cas d\'allergie aux cÃ©phalosporines.', NULL),
-('APATOUX22', 'APATOUX Vitamine C', 'ALO', 'Tyrothricine + TÃ©tracaÃ¯ne + Acide ascorbique (Vitamine C)', 'Ce mÃ©dicament est utilisÃ© pour traiter les affections de la bouche et de la gorge.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants, en cas de phÃ©nylcÃ©tonurie et chez l\'enfant de moins de 6 ans.', NULL),
-('BACTIG10', 'BACTIGEL', 'ABC', 'Erythromycine', 'Ce mÃ©dicament est utilisÃ© en application locale pour traiter l\'acnÃ© et les infections cutanÃ©es bactÃ©riennes associÃ©es.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux antibiotiques de la famille des macrolides ou des lincosanides.', NULL),
-('BACTIV13', 'BACTIVIL', 'AFM', 'Erythromycine', 'Ce mÃ©dicament est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux macrolides (dont le chef de file est l\'Ã©rythromycine).', NULL),
-('BITALV', 'BIVALIC', 'AAA', 'DextropropoxyphÃ¨ne + ParacÃ©tamol', 'Ce mÃ©dicament est utilisÃ© pour traiter les douleurs d\'intensitÃ© modÃ©rÃ©e ou intense.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux mÃ©dicaments de cette famille, d\'insuffisance hÃ©patique ou d\'insuffisance rÃ©nale.', NULL),
-('CARTION6', 'CARTION', 'AAA', 'Acide acÃ©tylsalicylique (aspirine) + Acide ascorbique (Vitamine C) + ParacÃ©tamol', 'Ce mÃ©dicament est utilisÃ© dans le traitement symptomatique de la douleur ou de la fiÃ¨vre.', 'Ce mÃ©dicament est contre-indiquÃ© en cas de troubles de la coagulation (tendances aux hÃ©morragies), d\'ulcÃ¨re gastroduodÃ©nal, maladies graves du foie.', NULL),
-('CLAZER6', 'CLAZER', 'AFM', 'Clarithromycine', 'Ce mÃ©dicament est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques. Il est Ã©galement utilisÃ© dans le traitement de l\'ulcÃ¨re gastro-duodÃ©nal, en association avec d\'autres mÃ©dicaments.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux macrolides (dont le chef de file est l\'Ã©rythromycine).', NULL),
-('DEPRIL9', 'DEPRAMIL', 'AIM', 'Clomipramine', 'Ce mÃ©dicament est utilisÃ© pour traiter les Ã©pisodes dÃ©pressifs sÃ©vÃ¨res, certaines douleurs rebelles, les troubles obsessionnels compulsifs et certaines Ã©nurÃ©sies chez l\'enfant.', 'Ce mÃ©dicament est contre-indiquÃ© en cas de glaucome ou d\'adÃ©nome de la prostate, d\'infarctus rÃ©cent, ou si vous avez reÃ Â§u un traitement par IMAO durant les 2 semaines prÃ©cÃ©dentes ou en cas d\'allergie aux antidÃ©presseurs imipraminiques.', NULL),
-('DIMIRTAM6', 'DIMIRTAM', 'AAC', 'Mirtazapine', 'Ce mÃ©dicament est utilisÃ© pour traiter les Ã©pisodes dÃ©pressifs sÃ©vÃ¨res.', 'La prise de ce produit est contre-indiquÃ©e en cas de d\'allergie Ã   l\'un des constituants.', NULL),
-('DOLRIL7', 'DOLORIL', 'AAA', 'Acide acÃ©tylsalicylique (aspirine) + Acide ascorbique (Vitamine C) + ParacÃ©tamol', 'Ce mÃ©dicament est utilisÃ© dans le traitement symptomatique de la douleur ou de la fiÃ¨vre.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie au paracÃ©tamol ou aux salicylates.', NULL),
-('DORNOM8', 'NORMADOR', 'HYP', 'Doxylamine', 'Ce mÃ©dicament est utilisÃ© pour traiter l\'insomnie chez l\'adulte.', 'Ce mÃ©dicament est contre-indiquÃ© en cas de glaucome, de certains troubles urinaires (rÃ©tention urinaire) et chez l\'enfant de moins de 15 ans.', NULL),
-('EQUILARX6', 'EQUILAR', 'AAH', 'MÃ©clozine', 'Ce mÃ©dicament est utilisÃ© pour traiter les vertiges et pour prÃ©venir le mal des transports.', 'Ce mÃ©dicament ne doit pas Ãªtre utilisÃ© en cas d\'allergie au produit, en cas de glaucome ou de rÃ©tention urinaire.', NULL),
-('EVILR7', 'EVEILLOR', 'PSA', 'Adrafinil', 'Ce mÃ©dicament est utilisÃ© pour traiter les troubles de la vigilance et certains symptomes neurologiques chez le sujet agÃ©.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants.', NULL),
-('INSXT5', 'INSECTIL', 'AH', 'DiphÃ©nydramine', 'Ce mÃ©dicament est utilisÃ© en application locale sur les piqÃ»res d\'insecte et l\'urticaire.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux antihistaminiques.', NULL),
-('JOVAI8', 'JOVENIL', 'AFM', 'Josamycine', 'Ce mÃ©dicament est utilisÃ© pour traiter des infections bactÃ©riennes spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux macrolides (dont le chef de file est l\'Ã©rythromycine).', NULL),
-('LIDOXY23', 'LIDOXYTRACINE', 'AFC', 'OxytÃ©tracycline +LidocaÃ¯ne', 'Ce mÃ©dicament est utilisÃ© en injection intramusculaire pour traiter certaines infections spÃ©cifiques.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants. Il ne doit pas Ãªtre associÃ© aux rÃ©tinoÃ¯des.', NULL),
-('LITHOR12', 'LITHORINE', 'AP', 'Lithium', 'Ce mÃ©dicament est indiquÃ© dans la prÃ©vention des psychoses maniaco-dÃ©pressives ou pour traiter les Ã©tats maniaques.', 'Ce mÃ©dicament ne doit pas Ãªtre utilisÃ© si vous Ãªtes allergique au lithium. Avant de prendre ce traitement, signalez Ã   votre mÃ©decin traitant si vous souffrez d\'insuffisance rÃ©nale, ou si vous avez un rÃ©gime sans sel.', NULL),
-('PARMOL16', 'PARMOCODEINE', 'AA', 'CodÃ©ine + ParacÃ©tamol', 'Ce mÃ©dicament est utilisÃ© pour le traitement des douleurs lorsque des antalgiques simples ne sont pas assez efficaces.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants, chez l\'enfant de moins de 15 Kg, en cas d\'insuffisance hÃ©patique ou respiratoire, d\'asthme, de phÃ©nylcÃ©tonurie et chez la femme qui allaite.', NULL),
-('PHYSOI8', 'PHYSICOR', 'PSA', 'Sulbutiamine', 'Ce mÃ©dicament est utilisÃ© pour traiter les baisses d\'activitÃ© physique ou psychique, souvent dans un contexte de dÃ©pression.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants.', NULL),
-('PIRIZ8', 'PIRIZAN', 'ABA', 'Pyrazinamide', 'Ce mÃ©dicament est utilisÃ©, en association Ã   d\'autres antibiotiques, pour traiter la tuberculose.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants, d\'insuffisance rÃ©nale ou hÃ©patique, d\'hyperuricÃ©mie ou de porphyrie.', NULL),
-('POMDI20', 'POMADINE', 'AO', 'Bacitracine', 'Ce mÃ©dicament est utilisÃ© pour traiter les infections oculaires de la surface de l\'oeil.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie aux antibiotiques appliquÃ©s localement.', NULL),
-('TROXT21', 'TROXADET', 'AIN', 'ParoxÃ©tine', 'Ce mÃ©dicament est utilisÃ© pour traiter la dÃ©pression et les troubles obsessionnels compulsifs. Il peut Ã©galement Ãªtre utilisÃ© en prÃ©vention des crises de panique avec ou sans agoraphobie.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie au produit.', NULL),
-('TXISOL22', 'TOUXISOL Vitamine C', 'ALO', 'Tyrothricine + Acide ascorbique (Vitamine C)', 'Ce mÃ©dicament est utilisÃ© pour traiter les affections de la bouche et de la gorge.', 'Ce mÃ©dicament est contre-indiquÃ© en cas d\'allergie Ã   l\'un des constituants et chez l\'enfant de moins de 6 ans.', NULL),
-('URIEG6', 'URIREGUL', 'AUM', 'Fosfomycine tromÃ©tamol', 'Ce mÃ©dicament est utilisÃ© pour traiter les infections urinaires simples chez la femme de moins de 65 ans.', 'La prise de ce mÃ©dicament est contre-indiquÃ©e en cas d\'allergie Ã   l\'un des constituants et d\'insuffisance rÃ©nale.', NULL);
+('3MYC7', 'TRIMYCINE', 'CRT', 'Triamcinolone (acétonide) + Néomycine + Nystatine', 'Ce médicament est un corticoïde à  activité forte ou très forte associé à  un antibiotique et un antifongique, utilisé en application locale dans certaines atteintes cutanées surinfectées.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants, d\'infections de la peau ou de parasitisme non traités, d\'acné. Ne pas appliquer sur une plaie, ni sous un pansement occlusif.', NULL),
+('ADIMOL9', 'ADIMOL', 'ABP', 'Amoxicilline + Acide clavulanique', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux pénicillines ou aux céphalosporines.', NULL),
+('AMOPIL7', 'AMOPIL', 'ABP', 'Amoxicilline', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux pénicillines. Il doit être administré avec prudence en cas d\'allergie aux céphalosporines.', NULL),
+('AMOX45', 'AMOXAR', 'ABP', 'Amoxicilline', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'La prise de ce médicament peut rendre positifs les tests de dépistage du dopage.', NULL),
+('AMOXIG12', 'AMOXI Gé', 'ABP', 'Amoxicilline', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux pénicillines. Il doit être administré avec prudence en cas d\'allergie aux céphalosporines.', NULL),
+('APATOUX22', 'APATOUX Vitamine C', 'ALO', 'Tyrothricine + Tétracaïne + Acide ascorbique (Vitamine C)', 'Ce médicament est utilisé pour traiter les affections de la bouche et de la gorge.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants, en cas de phénylcétonurie et chez l\'enfant de moins de 6 ans.', NULL),
+('BACTIG10', 'BACTIGEL', 'ABC', 'Erythromycine', 'Ce médicament est utilisé en application locale pour traiter l\'acné et les infections cutanées bactériennes associées.', 'Ce médicament est contre-indiqué en cas d\'allergie aux antibiotiques de la famille des macrolides ou des lincosanides.', NULL),
+('BACTIV13', 'BACTIVIL', 'AFM', 'Erythromycine', 'Ce médicament est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux macrolides (dont le chef de file est l\'érythromycine).', NULL),
+('BITALV', 'BIVALIC', 'AAA', 'Dextropropoxyphène + Paracétamol', 'Ce médicament est utilisé pour traiter les douleurs d\'intensité modérée ou intense.', 'Ce médicament est contre-indiqué en cas d\'allergie aux médicaments de cette famille, d\'insuffisance hépatique ou d\'insuffisance rénale.', NULL),
+('CARTION6', 'CARTION', 'AAA', 'Acide acétylsalicylique (aspirine) + Acide ascorbique (Vitamine C) + Paracétamol', 'Ce médicament est utilisé dans le traitement symptomatique de la douleur ou de la fièvre.', 'Ce médicament est contre-indiqué en cas de troubles de la coagulation (tendances aux hémorragies), d\'ulcère gastroduodénal, maladies graves du foie.', NULL),
+('CLAZER6', 'CLAZER', 'AFM', 'Clarithromycine', 'Ce médicament est utilisé pour traiter des infections bactériennes spécifiques. Il est également utilisé dans le traitement de l\'ulcère gastro-duodénal, en association avec d\'autres médicaments.', 'Ce médicament est contre-indiqué en cas d\'allergie aux macrolides (dont le chef de file est l\'érythromycine).', NULL),
+('DEPRIL9', 'DEPRAMIL', 'AIM', 'Clomipramine', 'Ce médicament est utilisé pour traiter les épisodes dépressifs sévères, certaines douleurs rebelles, les troubles obsessionnels compulsifs et certaines énurésies chez l\'enfant.', 'Ce médicament est contre-indiqué en cas de glaucome ou d\'adénome de la prostate, d\'infarctus récent, ou si vous avez reà§u un traitement par IMAO durant les 2 semaines précédentes ou en cas d\'allergie aux antidépresseurs imipraminiques.', NULL),
+('DIMIRTAM6', 'DIMIRTAM', 'AAC', 'Mirtazapine', 'Ce médicament est utilisé pour traiter les épisodes dépressifs sévères.', 'La prise de ce produit est contre-indiquée en cas de d\'allergie à  l\'un des constituants.', NULL),
+('DOLRIL7', 'DOLORIL', 'AAA', 'Acide acétylsalicylique (aspirine) + Acide ascorbique (Vitamine C) + Paracétamol', 'Ce médicament est utilisé dans le traitement symptomatique de la douleur ou de la fièvre.', 'Ce médicament est contre-indiqué en cas d\'allergie au paracétamol ou aux salicylates.', NULL),
+('DORNOM8', 'NORMADOR', 'HYP', 'Doxylamine', 'Ce médicament est utilisé pour traiter l\'insomnie chez l\'adulte.', 'Ce médicament est contre-indiqué en cas de glaucome, de certains troubles urinaires (rétention urinaire) et chez l\'enfant de moins de 15 ans.', NULL),
+('EQUILARX6', 'EQUILAR', 'AAH', 'Méclozine', 'Ce médicament est utilisé pour traiter les vertiges et pour prévenir le mal des transports.', 'Ce médicament ne doit pas être utilisé en cas d\'allergie au produit, en cas de glaucome ou de rétention urinaire.', NULL),
+('EVILR7', 'EVEILLOR', 'PSA', 'Adrafinil', 'Ce médicament est utilisé pour traiter les troubles de la vigilance et certains symptomes neurologiques chez le sujet agé.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants.', NULL),
+('INSXT5', 'INSECTIL', 'AH', 'Diphénydramine', 'Ce médicament est utilisé en application locale sur les piqûres d\'insecte et l\'urticaire.', 'Ce médicament est contre-indiqué en cas d\'allergie aux antihistaminiques.', NULL),
+('JOVAI8', 'JOVENIL', 'AFM', 'Josamycine', 'Ce médicament est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux macrolides (dont le chef de file est l\'érythromycine).', NULL),
+('LIDOXY23', 'LIDOXYTRACINE', 'AFC', 'Oxytétracycline +Lidocaïne', 'Ce médicament est utilisé en injection intramusculaire pour traiter certaines infections spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants. Il ne doit pas être associé aux rétinoïdes.', NULL),
+('LITHOR12', 'LITHORINE', 'AP', 'Lithium', 'Ce médicament est indiqué dans la prévention des psychoses maniaco-dépressives ou pour traiter les états maniaques.', 'Ce médicament ne doit pas être utilisé si vous êtes allergique au lithium. Avant de prendre ce traitement, signalez à  votre médecin traitant si vous souffrez d\'insuffisance rénale, ou si vous avez un régime sans sel.', NULL),
+('PARMOL16', 'PARMOCODEINE', 'AA', 'Codéine + Paracétamol', 'Ce médicament est utilisé pour le traitement des douleurs lorsque des antalgiques simples ne sont pas assez efficaces.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants, chez l\'enfant de moins de 15 Kg, en cas d\'insuffisance hépatique ou respiratoire, d\'asthme, de phénylcétonurie et chez la femme qui allaite.', NULL),
+('PHYSOI8', 'PHYSICOR', 'PSA', 'Sulbutiamine', 'Ce médicament est utilisé pour traiter les baisses d\'activité physique ou psychique, souvent dans un contexte de dépression.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants.', NULL),
+('PIRIZ8', 'PIRIZAN', 'ABA', 'Pyrazinamide', 'Ce médicament est utilisé, en association à  d\'autres antibiotiques, pour traiter la tuberculose.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants, d\'insuffisance rénale ou hépatique, d\'hyperuricémie ou de porphyrie.', NULL),
+('POMDI20', 'POMADINE', 'AO', 'Bacitracine', 'Ce médicament est utilisé pour traiter les infections oculaires de la surface de l\'oeil.', 'Ce médicament est contre-indiqué en cas d\'allergie aux antibiotiques appliqués localement.', NULL),
+('TROXT21', 'TROXADET', 'AIN', 'Paroxétine', 'Ce médicament est utilisé pour traiter la dépression et les troubles obsessionnels compulsifs. Il peut également être utilisé en prévention des crises de panique avec ou sans agoraphobie.', 'Ce médicament est contre-indiqué en cas d\'allergie au produit.', NULL),
+('TXISOL22', 'TOUXISOL Vitamine C', 'ALO', 'Tyrothricine + Acide ascorbique (Vitamine C)', 'Ce médicament est utilisé pour traiter les affections de la bouche et de la gorge.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants et chez l\'enfant de moins de 6 ans.', NULL),
+('URIEG6', 'URIREGUL', 'AUM', 'Fosfomycine trométamol', 'Ce médicament est utilisé pour traiter les infections urinaires simples chez la femme de moins de 65 ans.', 'La prise de ce médicament est contre-indiquée en cas d\'allergie à  l\'un des constituants et d\'insuffisance rénale.', NULL);
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,12 @@ CREATE TABLE `offrir` (
 
 INSERT INTO `offrir` (`id`, `visMatricule`, `rapNum`, `medDepotlegal`, `offQte`) VALUES
 (1, 'a17', 4, '3MYC7', 3),
-(2, 'a17', 4, 'AMOX45', 12);
+(2, 'a17', 4, 'AMOX45', 9),
+(10, 'a131', 6, 'AMOPIL7', 10),
+(11, 'a131', 6, 'AMOX45', 11),
+(12, 'a131', 4, '3MYC7', 3),
+(13, 'a131', 4, '3MYC7', 3),
+(14, 'a131', 4, 'AMOX45', 9);
 
 -- --------------------------------------------------------
 
@@ -268,100 +273,100 @@ CREATE TABLE `praticien` (
   `praVille` varchar(25) DEFAULT NULL,
   `praCoefnotoriete` float DEFAULT NULL,
   `typCode` varchar(3) NOT NULL,
-  `Remplacement` tinyint(1) NOT NULL
+  `remplacant` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `praticien`
 --
 
-INSERT INTO `praticien` (`praNum`, `praNom`, `praPrenom`, `praAdresse`, `praCp`, `praVille`, `praCoefnotoriete`, `typCode`, `Remplacement`) VALUES
-(1, 'Notini', 'Alain', '114 r Authie', '85000', 'LA ROCHE SUR YON', 290.03, 'MH', 0),
-(2, 'Gosselin', 'Albert', '13 r Devon', '41000', 'BLOIS', 307.49, 'MV', 0),
-(3, 'Delahaye', 'AndrÃ©', '36 av 6 Juin', '25000', 'BESANCON', 185.79, 'PS', 0),
-(4, 'Leroux', 'AndrÃ©', '47 av Robert Schuman', '60000', 'BEAUVAIS', 172.04, 'PH', 0),
-(5, 'Desmoulins', 'Anne', '31 r St Jean', '30000', 'NIMES', 94.75, 'PO', 0),
-(6, 'Mouel', 'Anne', '27 r Auvergne', '80000', 'AMIENS', 45.2, 'MH', 0),
-(7, 'Desgranges-Lentz', 'Antoine', '1 r Albert de Mun', '29000', 'MORLAIX', 20.07, 'MV', 0),
-(8, 'Marcouiller', 'Arnaud', '31 r St Jean', '68000', 'MULHOUSE', 396.52, 'PS', 0),
-(9, 'Dupuy', 'Benoit', '9 r Demolombe', '34000', 'MONTPELLIER', 395.66, 'PH', 0),
-(10, 'Lerat', 'Bernard', '31 r St Jean', '59000', 'LILLE', 257.79, 'PO', 0),
-(11, 'MarÃ§ais-Lefebvre', 'Bertrand', '86Bis r Basse', '67000', 'STRASBOURG', 450.96, 'MH', 0),
-(12, 'Boscher', 'Bruno', '94 r Falaise', '10000', 'TROYES', 356.14, 'MV', 0),
-(13, 'Morel', 'Catherine', '21 r Chateaubriand', '75000', 'PARIS', 379.57, 'PS', 0),
-(14, 'Guivarch', 'Chantal', '4 av GÃ©n Laperrine', '45000', 'ORLEANS', 114.56, 'PH', 0),
-(15, 'Bessin-Grosdoit', 'Christophe', '92 r Falaise', '6000', 'NICE', 222.06, 'PO', 0),
-(16, 'Rossa', 'Claire', '14 av ThiÃ¨s', '6000', 'NICE', 529.78, 'MH', 0),
-(17, 'Cauchy', 'Denis', '5 av Ste ThÃ©rÃ¨se', '11000', 'NARBONNE', 458.82, 'MV', 0),
-(18, 'GaffÃ©', 'Dominique', '9 av 1Ã¨re ArmÃ©e FranÃ§aise', '35000', 'RENNES', 213.4, 'PS', 0),
-(19, 'Guenon', 'Dominique', '98 bd Mar Lyautey', '44000', 'NANTES', 175.89, 'PH', 0),
-(20, 'PrÃ©vot', 'Dominique', '29 r Lucien Nelle', '87000', 'LIMOGES', 151.36, 'PO', 0),
-(21, 'Houchard', 'Eliane', '9 r Demolombe', '49100', 'ANGERS', 436.96, 'MH', 0),
-(22, 'Desmons', 'Elisabeth', '51 r BerniÃ¨res', '29000', 'QUIMPER', 281.17, 'MV', 0),
-(23, 'Flament', 'Elisabeth', '11 r Pasteur', '35000', 'RENNES', 315.6, 'PS', 0),
-(24, 'Goussard', 'Emmanuel', '9 r Demolombe', '41000', 'BLOIS', 40.72, 'PH', 0),
-(25, 'Desprez', 'Eric', '9 r Vaucelles', '33000', 'BORDEAUX', 406.85, 'PO', 0),
-(26, 'Coste', 'Evelyne', '29 r Lucien Nelle', '19000', 'TULLE', 441.87, 'MH', 0),
-(27, 'Lefebvre', 'FrÃ©dÃ©ric', '2 pl Wurzburg', '55000', 'VERDUN', 573.63, 'MV', 0),
-(28, 'LemÃ©e', 'FrÃ©dÃ©ric', '29 av 6 Juin', '56000', 'VANNES', 326.4, 'PS', 0),
-(29, 'Martin', 'FrÃ©dÃ©ric', 'BÃ¢t A 90 r Bayeux', '70000', 'VESOUL', 506.06, 'PH', 0),
-(30, 'Marie', 'FrÃ©dÃ©rique', '172 r CaponiÃ¨re', '70000', 'VESOUL', 313.31, 'PO', 0),
-(31, 'Rosenstech', 'GeneviÃ¨ve', '27 r Auvergne', '75000', 'PARIS', 366.82, 'MH', 0),
-(32, 'Pontavice', 'Ghislaine', '8 r Gaillon', '86000', 'POITIERS', 265.58, 'MV', 0),
-(33, 'Leveneur-Mosquet', 'Guillaume', '47 av Robert Schuman', '64000', 'PAU', 184.97, 'PS', 0),
-(34, 'Blanchais', 'Guy', '30 r Authie', '8000', 'SEDAN', 502.48, 'PH', 0),
-(35, 'Leveneur', 'Hugues', '7 pl St Gilles', '62000', 'ARRAS', 7.39, 'PO', 0),
-(36, 'Mosquet', 'Isabelle', '22 r Jules Verne', '76000', 'ROUEN', 77.1, 'MH', 0),
-(37, 'Giraudon', 'Jean-Christophe', '1 r Albert de Mun', '38100', 'VIENNE', 92.62, 'MV', 0),
-(38, 'Marie', 'Jean-Claude', '26 r HÃ©rouville', '69000', 'LYON', 120.1, 'PS', 0),
-(39, 'Maury', 'Jean-FranÃ§ois', '5 r Pierre Girard', '71000', 'CHALON SUR SAONE', 13.73, 'PH', 0),
-(40, 'Dennel', 'Jean-Louis', '7 pl St Gilles', '28000', 'CHARTRES', 550.69, 'PO', 0),
-(41, 'Ain', 'Jean-Pierre', '4 rÃ©sid Olympia', '2000', 'LAON', 5.59, 'MH', 0),
-(42, 'Chemery', 'Jean-Pierre', '51 pl Ancienne Boucherie', '14000', 'CAEN', 396.58, 'MV', 0),
-(43, 'Comoz', 'Jean-Pierre', '35 r Auguste Lechesne', '18000', 'BOURGES', 340.35, 'PS', 0),
-(44, 'Desfaudais', 'Jean-Pierre', '7 pl St Gilles', '29000', 'BREST', 71.76, 'PH', 0),
-(45, 'Phan', 'JÃ©rÃƒÂ´me', '9 r Clos Caillet', '79000', 'NIORT', 451.61, 'PO', 0),
-(46, 'Riou', 'Line', '43 bd GÃ©n Vanier', '77000', 'MARNE LA VALLEE', 193.25, 'MH', 0),
-(47, 'Chubilleau', 'Louis', '46 r Eglise', '17000', 'SAINTES', 202.07, 'MV', 0),
-(48, 'Lebrun', 'Lucette', '178 r Auge', '54000', 'NANCY', 410.41, 'PS', 0),
-(49, 'Goessens', 'Marc', '6 av 6 Juin', '39000', 'DOLE', 548.57, 'PH', 0),
-(50, 'Laforge', 'Marc', '5 rÃ©sid Prairie', '50000', 'SAINT LO', 265.05, 'PO', 0),
-(51, 'Millereau', 'Marc', '36 av 6 Juin', '72000', 'LA FERTE BERNARD', 430.42, 'MH', 0),
-(52, 'Dauverne', 'Marie-Christine', '69 av Charlemagne', '21000', 'DIJON', 281.05, 'MV', 0),
-(53, 'Vittorio', 'Myriam', '3 pl Champlain', '94000', 'BOISSY SAINT LEGER', 356.23, 'PS', 0),
-(54, 'Lapasset', 'Nhieu', '31 av 6 Juin', '52000', 'CHAUMONT', 107, 'PH', 0),
-(55, 'Plantet-Besnier', 'Nicole', '10 av 1Ã¨re ArmÃ©e FranÃ§aise', '86000', 'CHATELLEREAULT', 369.94, 'PO', 0),
-(56, 'Chubilleau', 'Pascal', '3 r Hastings', '15000', 'AURRILLAC', 290.75, 'MH', 0),
-(57, 'Robert', 'Pascal', '31 r St Jean', '93000', 'BOBIGNY', 162.41, 'MV', 0),
-(58, 'Jean', 'Pascale', '114 r Authie', '49100', 'SAUMUR', 375.52, 'PS', 0),
-(59, 'Chanteloube', 'Patrice', '14 av ThiÃ¨s', '13000', 'MARSEILLE', 478.01, 'PH', 0),
-(60, 'Lecuirot', 'Patrice', 'rÃ©sid St PÃ¨res 55 r PigaciÃ¨re', '54000', 'NANCY', 239.66, 'PO', 0),
-(61, 'Gandon', 'Patrick', '47 av Robert Schuman', '37000', 'TOURS', 599.06, 'MH', 0),
-(62, 'Mirouf', 'Patrick', '22 r Puits Picard', '74000', 'ANNECY', 458.42, 'MV', 0),
-(63, 'Boireaux', 'Philippe', '14 av ThiÃ¨s', '10000', 'CHALON EN CHAMPAGNE', 454.48, 'PS', 0),
-(64, 'Cendrier', 'Philippe', '7 pl St Gilles', '12000', 'RODEZ', 164.16, 'PH', 0),
-(65, 'Duhamel', 'Philippe', '114 r Authie', '34000', 'MONTPELLIER', 98.62, 'PO', 0),
-(66, 'Grigy', 'Philippe', '15 r MÃ©lingue', '44000', 'CLISSON', 285.1, 'MH', 0),
-(67, 'Linard', 'Philippe', '1 r Albert de Mun', '81000', 'ALBI', 486.3, 'MV', 0),
-(68, 'Lozier', 'Philippe', '8 r Gaillon', '31000', 'TOULOUSE', 48.4, 'PS', 0),
-(69, 'DechÃ¢tre', 'Pierre', '63 av ThiÃ¨s', '23000', 'MONTLUCON', 253.75, 'PH', 0),
-(70, 'Goessens', 'Pierre', '22 r Jean Romain', '40000', 'MONT DE MARSAN', 426.19, 'PO', 0),
-(71, 'LemÃ©nager', 'Pierre', '39 av 6 Juin', '57000', 'METZ', 118.7, 'MH', 0),
-(72, 'NÃ©e', 'Pierre', '39 av 6 Juin', '82000', 'MONTAUBAN', 72.54, 'MV', 0),
-(73, 'Guyot', 'Pierre-Laurent', '43 bd GÃ©n Vanier', '48000', 'MENDE', 352.31, 'PS', 0),
-(74, 'Chauchard', 'Roger', '9 r Vaucelles', '13000', 'MARSEILLE', 552.19, 'PH', 0),
-(75, 'Mabire', 'Roland', '11 r Boutiques', '67000', 'STRASBOURG', 422.39, 'PO', 0),
-(76, 'Leroy', 'Soazig', '45 r Boutiques', '61000', 'ALENCON', 570.67, 'MH', 0),
-(77, 'Guyot', 'StÃ©phane', '26 r HÃ©rouville', '46000', 'FIGEAC', 28.85, 'MV', 0),
-(78, 'Delposen', 'Sylvain', '39 av 6 Juin', '27000', 'DREUX', 292.01, 'PS', 0),
-(79, 'Rault', 'Sylvie', '15 bd Richemond', '2000', 'SOISSON', 526.6, 'PH', 0),
-(80, 'Renouf', 'Sylvie', '98 bd Mar Lyautey', '88000', 'EPINAL', 425.24, 'PO', 0),
-(81, 'Alliet-Grach', 'Thierry', '14 av ThiÃ¨s', '7000', 'PRIVAS', 451.31, 'MH', 0),
-(82, 'Bayard', 'Thierry', '92 r Falaise', '42000', 'SAINT ETIENNE', 271.71, 'MV', 0),
-(83, 'Gauchet', 'Thierry', '7 r Desmoueux', '38100', 'GRENOBLE', 406.1, 'PS', 0),
-(84, 'Bobichon', 'Tristan', '219 r CaponiÃ¨re', '9000', 'FOIX', 218.36, 'PH', 0),
-(85, 'Duchemin-Laniel', 'VÃ©ronique', '130 r St Jean', '33000', 'LIBOURNE', 265.61, 'PO', 0),
-(86, 'Laurent', 'YounÃ¨s', '34 r Demolombe', '53000', 'MAYENNE', 496.1, 'MH', 0);
+INSERT INTO `praticien` (`praNum`, `praNom`, `praPrenom`, `praAdresse`, `praCp`, `praVille`, `praCoefnotoriete`, `typCode`, `remplacant`) VALUES
+(1, 'Notini', 'Alain', '114 r Authie', '85000', 'LA ROCHE SUR YON', 290.03, 'MH', NULL),
+(2, 'Gosselin', 'Albert', '13 r Devon', '41000', 'BLOIS', 307.49, 'MV', NULL),
+(3, 'Delahaye', 'André', '36 av 6 Juin', '25000', 'BESANCON', 185.79, 'PS', NULL),
+(4, 'Leroux', 'André', '47 av Robert Schuman', '60000', 'BEAUVAIS', 172.04, 'PH', NULL),
+(5, 'Desmoulins', 'Anne', '31 r St Jean', '30000', 'NIMES', 94.75, 'PO', NULL),
+(6, 'Mouel', 'Anne', '27 r Auvergne', '80000', 'AMIENS', 45.2, 'MH', NULL),
+(7, 'Desgranges-Lentz', 'Antoine', '1 r Albert de Mun', '29000', 'MORLAIX', 20.07, 'MV', NULL),
+(8, 'Marcouiller', 'Arnaud', '31 r St Jean', '68000', 'MULHOUSE', 396.52, 'PS', NULL),
+(9, 'Dupuy', 'Benoit', '9 r Demolombe', '34000', 'MONTPELLIER', 395.66, 'PH', NULL),
+(10, 'Lerat', 'Bernard', '31 r St Jean', '59000', 'LILLE', 257.79, 'PO', NULL),
+(11, 'Marçais-Lefebvre', 'Bertrand', '86Bis r Basse', '67000', 'STRASBOURG', 450.96, 'MH', NULL),
+(12, 'Boscher', 'Bruno', '94 r Falaise', '10000', 'TROYES', 356.14, 'MV', NULL),
+(13, 'Morel', 'Catherine', '21 r Chateaubriand', '75000', 'PARIS', 379.57, 'PS', NULL),
+(14, 'Guivarch', 'Chantal', '4 av Gén Laperrine', '45000', 'ORLEANS', 114.56, 'PH', NULL),
+(15, 'Bessin-Grosdoit', 'Christophe', '92 r Falaise', '6000', 'NICE', 222.06, 'PO', NULL),
+(16, 'Rossa', 'Claire', '14 av Thiès', '6000', 'NICE', 529.78, 'MH', NULL),
+(17, 'Cauchy', 'Denis', '5 av Ste Thérèse', '11000', 'NARBONNE', 458.82, 'MV', NULL),
+(18, 'Gaffé', 'Dominique', '9 av 1ère Armée Française', '35000', 'RENNES', 213.4, 'PS', NULL),
+(19, 'Guenon', 'Dominique', '98 bd Mar Lyautey', '44000', 'NANTES', 175.89, 'PH', NULL),
+(20, 'Prévot', 'Dominique', '29 r Lucien Nelle', '87000', 'LIMOGES', 151.36, 'PO', NULL),
+(21, 'Houchard', 'Eliane', '9 r Demolombe', '49100', 'ANGERS', 436.96, 'MH', NULL),
+(22, 'Desmons', 'Elisabeth', '51 r Bernières', '29000', 'QUIMPER', 281.17, 'MV', NULL),
+(23, 'Flament', 'Elisabeth', '11 r Pasteur', '35000', 'RENNES', 315.6, 'PS', NULL),
+(24, 'Goussard', 'Emmanuel', '9 r Demolombe', '41000', 'BLOIS', 40.72, 'PH', NULL),
+(25, 'Desprez', 'Eric', '9 r Vaucelles', '33000', 'BORDEAUX', 406.85, 'PO', NULL),
+(26, 'Coste', 'Evelyne', '29 r Lucien Nelle', '19000', 'TULLE', 441.87, 'MH', NULL),
+(27, 'Lefebvre', 'Frédéric', '2 pl Wurzburg', '55000', 'VERDUN', 573.63, 'MV', NULL),
+(28, 'Lemée', 'Frédéric', '29 av 6 Juin', '56000', 'VANNES', 326.4, 'PS', NULL),
+(29, 'Martin', 'Frédéric', 'Bât A 90 r Bayeux', '70000', 'VESOUL', 506.06, 'PH', NULL),
+(30, 'Marie', 'Frédérique', '172 r Caponière', '70000', 'VESOUL', 313.31, 'PO', NULL),
+(31, 'Rosenstech', 'Geneviève', '27 r Auvergne', '75000', 'PARIS', 366.82, 'MH', NULL),
+(32, 'Pontavice', 'Ghislaine', '8 r Gaillon', '86000', 'POITIERS', 265.58, 'MV', NULL),
+(33, 'Leveneur-Mosquet', 'Guillaume', '47 av Robert Schuman', '64000', 'PAU', 184.97, 'PS', NULL),
+(34, 'Blanchais', 'Guy', '30 r Authie', '8000', 'SEDAN', 502.48, 'PH', NULL),
+(35, 'Leveneur', 'Hugues', '7 pl St Gilles', '62000', 'ARRAS', 7.39, 'PO', NULL),
+(36, 'Mosquet', 'Isabelle', '22 r Jules Verne', '76000', 'ROUEN', 77.1, 'MH', NULL),
+(37, 'Giraudon', 'Jean-Christophe', '1 r Albert de Mun', '38100', 'VIENNE', 92.62, 'MV', NULL),
+(38, 'Marie', 'Jean-Claude', '26 r Hérouville', '69000', 'LYON', 120.1, 'PS', NULL),
+(39, 'Maury', 'Jean-François', '5 r Pierre Girard', '71000', 'CHALON SUR SAONE', 13.73, 'PH', NULL),
+(40, 'Dennel', 'Jean-Louis', '7 pl St Gilles', '28000', 'CHARTRES', 550.69, 'PO', NULL),
+(41, 'Ain', 'Jean-Pierre', '4 résid Olympia', '2000', 'LAON', 5.59, 'MH', NULL),
+(42, 'Chemery', 'Jean-Pierre', '51 pl Ancienne Boucherie', '14000', 'CAEN', 396.58, 'MV', NULL),
+(43, 'Comoz', 'Jean-Pierre', '35 r Auguste Lechesne', '18000', 'BOURGES', 340.35, 'PS', NULL),
+(44, 'Desfaudais', 'Jean-Pierre', '7 pl St Gilles', '29000', 'BREST', 71.76, 'PH', NULL),
+(45, 'Phan', 'JérÃ´me', '9 r Clos Caillet', '79000', 'NIORT', 451.61, 'PO', NULL),
+(46, 'Riou', 'Line', '43 bd Gén Vanier', '77000', 'MARNE LA VALLEE', 193.25, 'MH', NULL),
+(47, 'Chubilleau', 'Louis', '46 r Eglise', '17000', 'SAINTES', 202.07, 'MV', NULL),
+(48, 'Lebrun', 'Lucette', '178 r Auge', '54000', 'NANCY', 410.41, 'PS', NULL),
+(49, 'Goessens', 'Marc', '6 av 6 Juin', '39000', 'DOLE', 548.57, 'PH', NULL),
+(50, 'Laforge', 'Marc', '5 résid Prairie', '50000', 'SAINT LO', 265.05, 'PO', NULL),
+(51, 'Millereau', 'Marc', '36 av 6 Juin', '72000', 'LA FERTE BERNARD', 430.42, 'MH', NULL),
+(52, 'Dauverne', 'Marie-Christine', '69 av Charlemagne', '21000', 'DIJON', 281.05, 'MV', NULL),
+(53, 'Vittorio', 'Myriam', '3 pl Champlain', '94000', 'BOISSY SAINT LEGER', 356.23, 'PS', NULL),
+(54, 'Lapasset', 'Nhieu', '31 av 6 Juin', '52000', 'CHAUMONT', 107, 'PH', NULL),
+(55, 'Plantet-Besnier', 'Nicole', '10 av 1ère Armée Française', '86000', 'CHATELLEREAULT', 369.94, 'PO', NULL),
+(56, 'Chubilleau', 'Pascal', '3 r Hastings', '15000', 'AURRILLAC', 290.75, 'MH', NULL),
+(57, 'Robert', 'Pascal', '31 r St Jean', '93000', 'BOBIGNY', 162.41, 'MV', NULL),
+(58, 'Jean', 'Pascale', '114 r Authie', '49100', 'SAUMUR', 375.52, 'PS', NULL),
+(59, 'Chanteloube', 'Patrice', '14 av Thiès', '13000', 'MARSEILLE', 478.01, 'PH', NULL),
+(60, 'Lecuirot', 'Patrice', 'résid St Pères 55 r Pigacière', '54000', 'NANCY', 239.66, 'PO', NULL),
+(61, 'Gandon', 'Patrick', '47 av Robert Schuman', '37000', 'TOURS', 599.06, 'MH', NULL),
+(62, 'Mirouf', 'Patrick', '22 r Puits Picard', '74000', 'ANNECY', 458.42, 'MV', NULL),
+(63, 'Boireaux', 'Philippe', '14 av Thiès', '10000', 'CHALON EN CHAMPAGNE', 454.48, 'PS', NULL),
+(64, 'Cendrier', 'Philippe', '7 pl St Gilles', '12000', 'RODEZ', 164.16, 'PH', NULL),
+(65, 'Duhamel', 'Philippe', '114 r Authie', '34000', 'MONTPELLIER', 98.62, 'PO', NULL),
+(66, 'Grigy', 'Philippe', '15 r Mélingue', '44000', 'CLISSON', 285.1, 'MH', NULL),
+(67, 'Linard', 'Philippe', '1 r Albert de Mun', '81000', 'ALBI', 486.3, 'MV', NULL),
+(68, 'Lozier', 'Philippe', '8 r Gaillon', '31000', 'TOULOUSE', 48.4, 'PS', NULL),
+(69, 'Dechâtre', 'Pierre', '63 av Thiès', '23000', 'MONTLUCON', 253.75, 'PH', NULL),
+(70, 'Goessens', 'Pierre', '22 r Jean Romain', '40000', 'MONT DE MARSAN', 426.19, 'PO', NULL),
+(71, 'Leménager', 'Pierre', '39 av 6 Juin', '57000', 'METZ', 118.7, 'MH', NULL),
+(72, 'Née', 'Pierre', '39 av 6 Juin', '82000', 'MONTAUBAN', 72.54, 'MV', NULL),
+(73, 'Guyot', 'Pierre-Laurent', '43 bd Gén Vanier', '48000', 'MENDE', 352.31, 'PS', NULL),
+(74, 'Chauchard', 'Roger', '9 r Vaucelles', '13000', 'MARSEILLE', 552.19, 'PH', NULL),
+(75, 'Mabire', 'Roland', '11 r Boutiques', '67000', 'STRASBOURG', 422.39, 'PO', NULL),
+(76, 'Leroy', 'Soazig', '45 r Boutiques', '61000', 'ALENCON', 570.67, 'MH', NULL),
+(77, 'Guyot', 'Stéphane', '26 r Hérouville', '46000', 'FIGEAC', 28.85, 'MV', NULL),
+(78, 'Delposen', 'Sylvain', '39 av 6 Juin', '27000', 'DREUX', 292.01, 'PS', NULL),
+(79, 'Rault', 'Sylvie', '15 bd Richemond', '2000', 'SOISSON', 526.6, 'PH', NULL),
+(80, 'Renouf', 'Sylvie', '98 bd Mar Lyautey', '88000', 'EPINAL', 425.24, 'PO', NULL),
+(81, 'Alliet-Grach', 'Thierry', '14 av Thiès', '7000', 'PRIVAS', 451.31, 'MH', NULL),
+(82, 'Bayard', 'Thierry', '92 r Falaise', '42000', 'SAINT ETIENNE', 271.71, 'MV', NULL),
+(83, 'Gauchet', 'Thierry', '7 r Desmoueux', '38100', 'GRENOBLE', 406.1, 'PS', NULL),
+(84, 'Bobichon', 'Tristan', '219 r Caponière', '9000', 'FOIX', 218.36, 'PH', NULL),
+(85, 'Duchemin-Laniel', 'Véronique', '130 r St Jean', '33000', 'LIBOURNE', 265.61, 'PO', NULL),
+(86, 'Laurent', 'Younès', '34 r Demolombe', '53000', 'MAYENNE', 496.1, 'MH', NULL);
 
 -- --------------------------------------------------------
 
@@ -395,9 +400,24 @@ CREATE TABLE `presentation` (
 --
 
 CREATE TABLE `presenter` (
-  `rapNumP` int(11) NOT NULL,
-  `medDepotlegal` varchar(10) CHARACTER SET utf8 NOT NULL
+  `rapNum` int(11) NOT NULL DEFAULT '0',
+  `medDepotlegal` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `visMatricule` varchar(10) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `presenter`
+--
+
+INSERT INTO `presenter` (`rapNum`, `medDepotlegal`, `visMatricule`) VALUES
+(3, 'ADIMOL9', 'a131'),
+(4, 'ADIMOL9', 'a131'),
+(5, 'BACTIV13', 'a131'),
+(5, 'EVILR7', 'a131'),
+(6, 'DOLRIL7', 'a131'),
+(7, 'ADIMOL9', 'a131'),
+(8, 'ADIMOL9', 'a131'),
+(9, 'JOVAI8', 'a131');
 
 -- --------------------------------------------------------
 
@@ -413,17 +433,23 @@ CREATE TABLE `rapportvisite` (
   `rapDate` datetime DEFAULT NULL,
   `rapBilan` varchar(255) DEFAULT NULL,
   `rapMotif` varchar(255) DEFAULT NULL,
-  `CoeffCOnf` int(1) NOT NULL
+  `CoeffConf` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `rapportvisite`
 --
 
-INSERT INTO `rapportvisite` (`id`, `visMatricule`, `rapNum`, `praNum`, `rapDate`, `rapBilan`, `rapMotif`, `CoeffCOnf`) VALUES
-(1, 'a131', 3, 23, '2002-04-18 00:00:00', 'MÃ©decin curieux, Ã  recontacer en dÃ©cembre pour rÃ©union', 'Actualisation annuelle', 0),
-(2, 'a131', 7, 41, '2003-03-23 00:00:00', 'RAS\r\nChangement de tel : 05 89 89 89 89', 'Rapport Annuel', 0),
-(3, 'a17', 4, 4, '2003-05-21 00:00:00', 'Changement de direction, redÃ©finition de la politique mÃ©dicamenteuse, recours au gÃ©nÃ©rique', 'Baisse activitÃ©', 0);
+INSERT INTO `rapportvisite` (`id`, `visMatricule`, `rapNum`, `praNum`, `rapDate`, `rapBilan`, `rapMotif`, `CoeffConf`) VALUES
+(3, 'a17', 4, 4, '2017-05-21 00:00:00', 'Changement de direction, redéfinition de la politique médicamenteuse, recours au générique', 'Baisse activité', NULL),
+(4, 'a131', 3, 23, '2017-04-29 00:00:00', 'Médecin pas content, à recontacter en décembre pour réunion', 'Actualisation annuelle', NULL),
+(5, 'a131', 4, 4, '2017-05-21 00:00:00', 'Changement de direction, redéfinition de la politique médicamenteuse, recours au générique', NULL, NULL),
+(6, 'a131', 5, 23, '2018-05-01 00:00:00', 'sknjdjdbfnvqberfva benofubabzgnefbozepofcu,hvyiefnbvazefubazyuefu', NULL, NULL),
+(7, 'a131', 6, 23, '2018-05-01 00:00:00', NULL, NULL, NULL),
+(8, 'a131', 7, 23, '2018-05-08 00:00:00', NULL, NULL, NULL),
+(9, 'a131', 8, 23, '2018-05-04 00:00:00', 'coucou tt le monde', 'Sortie d', 1),
+(10, 'a131', 9, 23, '2018-05-03 00:00:00', 'yop', 'Sortie d', 2),
+(11, 'a131', 1, 6, '2018-05-02 00:00:00', 'uilyjthrfghjvkcgfb', 'Relance Annuel', 3);
 
 -- --------------------------------------------------------
 
@@ -463,12 +489,12 @@ INSERT INTO `region` (`regCode`, `secCode`, `regNom`) VALUES
 ('BO', 'E', 'Bourgogne'),
 ('CA', 'N', 'Champagne Ardennes'),
 ('CE', 'P', 'Centre'),
-('FC', 'E', 'Franche ComtÃ©'),
+('FC', 'E', 'Franche Comté'),
 ('HN', 'N', 'Haute Normandie'),
 ('IF', 'P', 'Ile de France'),
 ('LG', 'S', 'Languedoc'),
 ('LI', 'P', 'Limousin'),
-('MP', 'S', 'Midi PyrÃ©nÃ©e'),
+('MP', 'S', 'Midi Pyrénée'),
 ('NP', 'N', 'Nord Pas de Calais'),
 ('PA', 'S', 'Provence Alpes Cote d\'Azur'),
 ('PC', 'O', 'Poitou Charente'),
@@ -476,7 +502,7 @@ INSERT INTO `region` (`regCode`, `secCode`, `regNom`) VALUES
 ('PL', 'O', 'Pays de Loire'),
 ('RA', 'E', 'Rhone Alpes'),
 ('RO', 'S', 'Roussilon'),
-('VD', 'O', 'VendÃ©e');
+('VD', 'O', 'Vendée');
 
 -- --------------------------------------------------------
 
@@ -517,45 +543,45 @@ CREATE TABLE `specialite` (
 
 INSERT INTO `specialite` (`speCode`, `speLibelle`) VALUES
 ('ACP', 'anatomie et cytologie pathologiques'),
-('AMV', 'angÃ©iologie, mÃ©decine vasculaire'),
-('ARC', 'anesthÃ©siologie et rÃ©animation chirurgicale'),
-('BM', 'biologie mÃ©dicale'),
+('AMV', 'angéiologie, médecine vasculaire'),
+('ARC', 'anesthésiologie et réanimation chirurgicale'),
+('BM', 'biologie médicale'),
 ('CAC', 'cardiologie et affections cardio-vasculaires'),
 ('CCT', 'chirurgie cardio-vasculaire et thoracique'),
-('CG', 'chirurgie gÃ©nÃ©rale'),
+('CG', 'chirurgie générale'),
 ('CMF', 'chirurgie maxillo-faciale'),
-('COM', 'cancÃ©rologie, oncologie mÃ©dicale'),
-('COT', 'chirurgie orthopÃ©dique et traumatologie'),
-('CPR', 'chirurgie plastique reconstructrice et esthÃ©tique'),
+('COM', 'cancérologie, oncologie médicale'),
+('COT', 'chirurgie orthopédique et traumatologie'),
+('CPR', 'chirurgie plastique reconstructrice et esthétique'),
 ('CU', 'chirurgie urologique'),
 ('CV', 'chirurgie vasculaire'),
-('DN', 'diabÃ©tologie-nutrition, nutrition'),
-('DV', 'dermatologie et vÃ©nÃ©rÃ©ologie'),
-('EM', 'endocrinologie et mÃ©tabolismes'),
-('ETD', 'Ã©valuation et traitement de la douleur'),
-('GEH', 'gastro-entÃ©rologie et hÃ©patologie (appareil digestif)'),
-('GMO', 'gynÃ©cologie mÃ©dicale, obstÃ©trique'),
-('GO', 'gynÃ©cologie-obstÃ©trique'),
-('HEM', 'maladies du sang (hÃ©matologie)'),
-('MBS', 'mÃ©decine et biologie du sport'),
-('MDT', 'mÃ©decine du travail'),
-('MMO', 'mÃ©decine manuelle - ostÃ©opathie'),
-('MN', 'mÃ©decine nuclÃ©aire'),
-('MPR', 'mÃ©decine physique et de rÃ©adaptation'),
-('MTR', 'mÃ©decine tropicale, pathologie infectieuse et tropicale'),
-('NEP', 'nÃ©phrologie'),
+('DN', 'diabétologie-nutrition, nutrition'),
+('DV', 'dermatologie et vénéréologie'),
+('EM', 'endocrinologie et métabolismes'),
+('ETD', 'évaluation et traitement de la douleur'),
+('GEH', 'gastro-entérologie et hépatologie (appareil digestif)'),
+('GMO', 'gynécologie médicale, obstétrique'),
+('GO', 'gynécologie-obstétrique'),
+('HEM', 'maladies du sang (hématologie)'),
+('MBS', 'médecine et biologie du sport'),
+('MDT', 'médecine du travail'),
+('MMO', 'médecine manuelle - ostéopathie'),
+('MN', 'médecine nucléaire'),
+('MPR', 'médecine physique et de réadaptation'),
+('MTR', 'médecine tropicale, pathologie infectieuse et tropicale'),
+('NEP', 'néphrologie'),
 ('NRC', 'neurochirurgie'),
 ('NRL', 'neurologie'),
-('ODM', 'orthopÃ©die dento maxillo-faciale'),
+('ODM', 'orthopédie dento maxillo-faciale'),
 ('OPH', 'ophtalmologie'),
 ('ORL', 'oto-rhino-laryngologie'),
 ('PEA', 'psychiatrie de l\'enfant et de l\'adolescent'),
-('PME', 'pÃ©diatrie maladies des enfants'),
+('PME', 'pédiatrie maladies des enfants'),
 ('PNM', 'pneumologie'),
 ('PSC', 'psychiatrie'),
-('RAD', 'radiologie (radiodiagnostic et imagerie mÃ©dicale)'),
-('RDT', 'radiothÃ©rapie (oncologie option radiothÃ©rapie)'),
-('RGM', 'reproduction et gynÃ©cologie mÃ©dicale'),
+('RAD', 'radiologie (radiodiagnostic et imagerie médicale)'),
+('RDT', 'radiothérapie (oncologie option radiothérapie)'),
+('RGM', 'reproduction et gynécologie médicale'),
 ('RHU', 'rhumatologie'),
 ('STO', 'stomatologie'),
 ('SXL', 'sexologie'),
@@ -599,20 +625,20 @@ INSERT INTO `travailler` (`id`, `visMatricule`, `jJMMAA`, `regCode`, `traRole`) 
 (17, 'a17', '1991-08-26 00:00:00', 'RA', 'Visiteur'),
 (18, 'e52', '1991-10-31 00:00:00', 'HN', 'Visiteur'),
 (19, 'd13', '1991-12-05 00:00:00', 'PL', 'Visiteur'),
-(20, 'k53', '1992-04-03 00:00:00', 'AL', 'DÃ©lÃ©guÃ©'),
+(20, 'k53', '1992-04-03 00:00:00', 'AL', 'Délégué'),
 (21, 'c3', '1992-05-05 00:00:00', 'CA', 'Visiteur'),
 (22, 'n58', '1992-08-30 00:00:00', 'CE', 'Visiteur'),
 (23, 's21', '1992-09-25 00:00:00', 'LI', 'Visiteur'),
 (24, 'h40', '1992-11-01 00:00:00', 'CA', 'Visiteur'),
 (25, 'a131', '1992-12-11 00:00:00', 'BN', 'Visiteur'),
-(26, 'p40', '1992-12-14 00:00:00', 'BN', 'DÃ©lÃ©guÃ©'),
+(26, 'p40', '1992-12-14 00:00:00', 'BN', 'Délégué'),
 (27, 'j50', '1992-12-16 00:00:00', 'NP', 'Visiteur'),
 (28, 'p32', '1992-12-24 00:00:00', 'IF', 'Visiteur'),
 (29, 'h13', '1993-05-08 00:00:00', 'LI', 'Visiteur'),
-(30, 'e24', '1993-05-17 00:00:00', 'AL', 'DÃ©lÃ©guÃ©'),
+(30, 'e24', '1993-05-17 00:00:00', 'AL', 'Délégué'),
 (31, 'f21', '1993-06-08 00:00:00', 'RA', 'Visiteur'),
 (32, 'h35', '1993-08-26 00:00:00', 'AU', 'Visiteur'),
-(33, 'b34', '1993-12-06 00:00:00', 'CE', 'DÃ©lÃ©guÃ©'),
+(33, 'b34', '1993-12-06 00:00:00', 'CE', 'Délégué'),
 (34, 'f4', '1994-05-03 00:00:00', 'MP', 'Visiteur'),
 (35, 'b25', '1994-07-03 00:00:00', 'PL', 'Visiteur'),
 (36, 't55', '1994-11-29 00:00:00', 'MP', 'Visiteur'),
@@ -625,7 +651,7 @@ INSERT INTO `travailler` (`id`, `visMatricule`, `jJMMAA`, `regCode`, `traRole`) 
 (43, 'l23', '1995-06-05 00:00:00', 'PC', 'Visiteur'),
 (44, 'b59', '1995-10-21 00:00:00', 'RA', 'Visiteur'),
 (45, 's10', '1995-11-14 00:00:00', 'FC', 'Visiteur'),
-(46, 'e5', '1995-11-27 00:00:00', 'MP', 'DÃ©lÃ©guÃ©'),
+(46, 'e5', '1995-11-27 00:00:00', 'MP', 'Délégué'),
 (47, 'g7', '1996-01-13 00:00:00', 'LI', 'Visiteur'),
 (48, 'g19', '1996-01-18 00:00:00', 'IF', 'Visiteur'),
 (49, 'e49', '1996-02-19 00:00:00', 'MP', 'Visiteur'),
@@ -635,15 +661,15 @@ INSERT INTO `travailler` (`id`, `visMatricule`, `jJMMAA`, `regCode`, `traRole`) 
 (53, 'a131', '1996-05-27 00:00:00', 'BG', 'Visiteur'),
 (54, 'k4', '1996-11-21 00:00:00', 'LG', 'Visiteur'),
 (55, 'l46', '1997-01-24 00:00:00', 'PL', 'Visiteur'),
-(56, 'c14', '1997-02-01 00:00:00', 'PA', 'DÃ©lÃ©guÃ©'),
+(56, 'c14', '1997-02-01 00:00:00', 'PA', 'Délégué'),
 (57, 'f39', '1997-02-15 00:00:00', 'RA', 'Visiteur'),
 (58, 'b16', '1997-03-21 00:00:00', 'BG', 'Visiteur'),
 (59, 'p6', '1997-03-30 00:00:00', 'AQ', 'Visiteur'),
 (60, 't47', '1997-08-29 00:00:00', 'PI', 'Visiteur'),
 (61, 'q17', '1997-09-06 00:00:00', 'BN', 'Visiteur'),
-(62, 'a17', '1997-09-19 00:00:00', 'RA', 'DÃ©lÃ©guÃ©'),
+(62, 'a17', '1997-09-19 00:00:00', 'RA', 'Délégué'),
 (63, 'b4', '1997-09-25 00:00:00', 'AQ', 'Visiteur'),
-(64, 'd51', '1997-11-18 00:00:00', 'FC', 'DÃ©lÃ©guÃ©'),
+(64, 'd51', '1997-11-18 00:00:00', 'FC', 'Délégué'),
 (65, 'b50', '1998-01-18 00:00:00', 'PA', 'Visiteur'),
 (66, 'j45', '1998-02-25 00:00:00', 'CA', 'Responsable'),
 (67, 'h30', '1998-04-26 00:00:00', 'IF', 'Visiteur'),
@@ -652,12 +678,12 @@ INSERT INTO `travailler` (`id`, `visMatricule`, `jJMMAA`, `regCode`, `traRole`) 
 (70, 'p41', '1998-07-27 00:00:00', 'PC', 'Visiteur'),
 (71, 'a93', '1999-01-02 00:00:00', 'PC', 'Visiteur'),
 (72, 'b19', '1999-01-31 00:00:00', 'PL', 'Visiteur'),
-(73, 'g30', '1999-03-27 00:00:00', 'PI', 'DÃ©lÃ©guÃ©'),
-(74, 'm45', '1999-04-08 00:00:00', 'AL', 'DÃ©lÃ©guÃ©'),
+(73, 'g30', '1999-03-27 00:00:00', 'PI', 'Délégué'),
+(74, 'm45', '1999-04-08 00:00:00', 'AL', 'Délégué'),
 (75, 'b34', '1999-06-18 00:00:00', 'CE', 'Responsable'),
 (76, 'p40', '1999-07-17 00:00:00', 'BN', 'Responsable'),
-(77, 'a55', '1999-08-21 00:00:00', 'RO', 'DÃ©lÃ©guÃ©'),
-(78, 'b25', '2000-01-01 00:00:00', 'PL', 'DÃ©lÃ©guÃ©'),
+(77, 'a55', '1999-08-21 00:00:00', 'RO', 'Délégué'),
+(78, 'b25', '2000-01-01 00:00:00', 'PL', 'Délégué'),
 (79, 'e24', '2000-02-29 00:00:00', 'AL', 'Responsable'),
 (80, 'b28', '2000-08-02 00:00:00', 'LG', 'Visiteur'),
 (81, 'g30', '2000-10-31 00:00:00', 'PI', 'Responsable'),
@@ -693,11 +719,11 @@ CREATE TABLE `typepraticien` (
 --
 
 INSERT INTO `typepraticien` (`typCode`, `typLibelle`, `typLieu`) VALUES
-('MH', 'MÃ©decin Hospitalier', 'Hopital ou clinique'),
-('MV', 'MÃ©decine de Ville', 'Cabinet'),
+('MH', 'Médecin Hospitalier', 'Hopital ou clinique'),
+('MV', 'Médecine de Ville', 'Cabinet'),
 ('PH', 'Pharmacien Hospitalier', 'Hopital ou clinique'),
 ('PO', 'Pharmacien Officine', 'Pharmacie'),
-('PS', 'Personnel de santÃ©', 'Centre paramÃ©dical');
+('PS', 'Personnel de santé', 'Centre paramédical');
 
 -- --------------------------------------------------------
 
@@ -715,82 +741,83 @@ CREATE TABLE `visiteur` (
   `visDateembauche` datetime DEFAULT NULL,
   `secCode` varchar(1) DEFAULT NULL,
   `labCode` varchar(2) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `mdp` varchar(255) DEFAULT NULL,
+  `typ_collab` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `visiteur`
 --
 
-INSERT INTO `visiteur` (`visMatricule`, `visNom`, `visPrenom`, `visAdresse`, `visCp`, `visVille`, `visDateembauche`, `secCode`, `labCode`, `password`) VALUES
-('a131', 'Villechalane', 'Louis', '8 cours Lafontaine', '29000', 'BREST', '1992-12-11 00:00:00', NULL, 'SW', 'Villelou'),
-('a17', 'Andre', 'David', '1 r Aimon de ChissÃ©e', '38100', 'GRENOBLE', '1991-08-26 00:00:00', NULL, 'GY', 'A12hJx56'),
-('a55', 'Bedos', 'Christian', '1 r BÃ©nÃ©dictins', '65000', 'TARBES', '1987-07-17 00:00:00', NULL, 'GY', '8g8bB7Nm'),
-('a93', 'Tusseau', 'Louis', '22 r Renou', '86000', 'POITIERS', '1999-01-02 00:00:00', NULL, 'SW', 'wmw6WM77'),
-('b13', 'Bentot', 'Pascal', '11 av 6 Juin', '67000', 'STRASBOURG', '1996-03-11 00:00:00', NULL, 'GY', 'a5gH59yD'),
-('b16', 'Bioret', 'Luc', '1 r Linne', '35000', 'RENNES', '1997-03-21 00:00:00', NULL, 'SW', 'aL2cN54r'),
-('b19', 'Bunisset', 'Francis', '10 r Nicolas Chorier', '85000', 'LA ROCHE SUR YON', '1999-01-31 00:00:00', NULL, 'GY', '78NN7wvq'),
-('b25', 'Bunisset', 'Denise', '1 r Lionne', '49100', 'ANGERS', '1994-07-03 00:00:00', NULL, 'SW', 'DpJzh623'),
-('b28', 'Cacheux', 'Bernard', '114 r Authie', '34000', 'MONTPELLIER', '2000-08-02 00:00:00', NULL, 'GY', 'z5duPE54'),
-('b34', 'Cadic', 'Eric', '123 r CaponiÃ¨re', '41000', 'BLOIS', '1993-12-06 00:00:00', 'P', 'SW', '5hM74hTu'),
-('b4', 'Charoze', 'Catherine', '100 pl GÃ©ants', '33000', 'BORDEAUX', '1997-09-25 00:00:00', NULL, 'SW', 'Tp5Gme39'),
-('b50', 'Clepkens', 'Christophe', '12 r FÃ©dÃ©rico Garcia Lorca', '13000', 'MARSEILLE', '1998-01-18 00:00:00', NULL, 'SW', '92uwPDg5'),
-('b59', 'Cottin', 'Vincenne', '36 sq Capucins', '5000', 'GAP', '1995-10-21 00:00:00', NULL, 'GY', '3i2rF4Qk'),
-('c14', 'Daburon', 'FranÃ§ois', '13 r Champs ElysÃ©es', '6000', 'NICE', '1989-02-01 00:00:00', 'S', 'SW', 'd4A79vxE'),
-('c3', 'De', 'Philippe', '13 r Charles Peguy', '10000', 'TROYES', '1992-05-05 00:00:00', NULL, 'SW', 'J663mhRv'),
-('c54', 'Debelle', 'Michel', '181 r CaponiÃ¨re', '88000', 'EPINAL', '1991-04-09 00:00:00', NULL, 'SW', 'y7R4Enq8'),
-('d13', 'Debelle', 'Jeanne', '134 r Stalingrad', '44000', 'NANTES', '1991-12-05 00:00:00', NULL, 'SW', 'a34v2iLH'),
-('d51', 'Debroise', 'Michel', '2 av 6 Juin', '70000', 'VESOUL', '1997-11-18 00:00:00', 'E', 'GY', '96NjX9jc'),
-('e22', 'Desmarquest', 'Nathalie', '14 r FÃ©dÃ©rico Garcia Lorca', '54000', 'NANCY', '1989-03-24 00:00:00', NULL, 'GY', '3G4j9dNc'),
-('e24', 'Desnost', 'Pierre', '16 r Barral de Montferrat', '55000', 'VERDUN', '1993-05-17 00:00:00', 'E', 'SW', 'Tnz36t4U'),
-('e39', 'Dudouit', 'FrÃ©dÃ©ric', '18 quai Xavier Jouvin', '75000', 'PARIS', '1988-04-26 00:00:00', NULL, 'GY', 'fNm8Pw67'),
-('e49', 'Duncombe', 'Claude', '19 av Alsace Lorraine', '9000', 'FOIX', '1996-02-19 00:00:00', NULL, 'GY', 'D479zsEq'),
-('e5', 'Enault-Pascreau', 'CÃ©line', '25B r Stalingrad', '40000', 'MONT DE MARSAN', '1990-11-27 00:00:00', 'S', 'GY', 'D8k97tcR'),
-('e52', 'Eynde', 'ValÃ©rie', '3 r Henri Moissan', '76000', 'ROUEN', '1991-10-31 00:00:00', NULL, 'GY', '67EjH5nv'),
-('f21', 'Finck', 'Jacques', 'rte Montreuil Bellay', '74000', 'ANNECY', '1993-06-08 00:00:00', NULL, 'SW', 'D3mYr6p6'),
-('f39', 'FrÃ©mont', 'Fernande', '4 r Jean Giono', '69000', 'LYON', '1997-02-15 00:00:00', NULL, 'GY', ''),
-('f4', 'Gest', 'Alain', '30 r Authie', '46000', 'FIGEAC', '1994-05-03 00:00:00', NULL, 'GY', ''),
-('g19', 'Gheysen', 'Galassus', '32 bd Mar Foch', '75000', 'PARIS', '1996-01-18 00:00:00', NULL, 'SW', ''),
-('g30', 'Girard', 'Yvon', '31 av 6 Juin', '80000', 'AMIENS', '1999-03-27 00:00:00', 'N', 'GY', ''),
-('g53', 'Gombert', 'Luc', '32 r Emile Gueymard', '56000', 'VANNES', '1985-10-02 00:00:00', NULL, 'GY', ''),
-('g7', 'Guindon', 'Caroline', '40 r Mar Montgomery', '87000', 'LIMOGES', '1996-01-13 00:00:00', NULL, 'GY', ''),
-('h13', 'Guindon', 'FranÃ§ois', '44 r PicotiÃ¨re', '19000', 'TULLE', '1993-05-08 00:00:00', NULL, 'SW', ''),
-('h30', 'Igigabel', 'Guy', '33 gal Arlequin', '94000', 'CRETEIL', '1998-04-26 00:00:00', NULL, 'SW', ''),
-('h35', 'Jourdren', 'Pierre', '34 av Jean Perrot', '15000', 'AURRILLAC', '1993-08-26 00:00:00', NULL, 'GY', ''),
-('h40', 'Juttard', 'Pierre-Raoul', '34 cours Jean JaurÃ¨s', '8000', 'SEDAN', '1992-11-01 00:00:00', NULL, 'GY', ''),
-('j45', 'LabourÃ©-Morel', 'Saout', '38 cours Berriat', '52000', 'CHAUMONT', '1998-02-25 00:00:00', 'N', 'SW', ''),
-('j50', 'LandrÃ©', 'Philippe', '4 av GÃ©n Laperrine', '59000', 'LILLE', '1992-12-16 00:00:00', NULL, 'GY', ''),
-('j8', 'Langeard', 'Hugues', '39 av Jean Perrot', '93000', 'BAGNOLET', '1998-06-18 00:00:00', 'P', 'GY', ''),
-('k4', 'Lanne', 'Bernard', '4 r Bayeux', '30000', 'NIMES', '1996-11-21 00:00:00', NULL, 'SW', ''),
-('k53', 'Le', 'NoÃ«l', '4 av Beauvert', '68000', 'MULHOUSE', '1983-03-23 00:00:00', NULL, 'SW', ''),
-('l14', 'Le', 'Jean', '39 r Raspail', '53000', 'LAVAL', '1995-02-02 00:00:00', NULL, 'SW', ''),
-('l23', 'Leclercq', 'Servane', '11 r Quinconce', '18000', 'BOURGES', '1995-06-05 00:00:00', NULL, 'SW', ''),
-('l46', 'Lecornu', 'Jean-Bernard', '4 bd Mar Foch', '72000', 'LA FERTE BERNARD', '1997-01-24 00:00:00', NULL, 'GY', ''),
-('l56', 'Lecornu', 'Ludovic', '4 r Abel Servien', '25000', 'BESANCON', '1996-02-27 00:00:00', NULL, 'SW', ''),
-('m35', 'Lejard', 'AgnÃ¨s', '4 r Anthoard', '82000', 'MONTAUBAN', '1987-10-06 00:00:00', NULL, 'SW', ''),
-('m45', 'Lesaulnier', 'Pascal', '47 r Thiers', '57000', 'METZ', '1990-10-13 00:00:00', NULL, 'SW', ''),
-('n42', 'Letessier', 'StÃ©phane', '5 chem Capuche', '27000', 'EVREUX', '1996-03-06 00:00:00', NULL, 'GY', ''),
-('n58', 'Loirat', 'Didier', 'Les PÃªchers citÃ© Bourg la Croix', '45000', 'ORLEANS', '1992-08-30 00:00:00', NULL, 'GY', ''),
-('n59', 'Maffezzoli', 'Thibaud', '5 r Chateaubriand', '2000', 'LAON', '1994-12-19 00:00:00', NULL, 'SW', ''),
-('o26', 'Mancini', 'Anne', '5 r D\'Agier', '48000', 'MENDE', '1995-01-05 00:00:00', NULL, 'GY', ''),
-('p32', 'Marcouiller', 'GÃ©rard', '7 pl St Gilles', '91000', 'ISSY LES MOULINEAUX', '1992-12-24 00:00:00', NULL, 'GY', ''),
-('p40', 'Michel', 'Jean-Claude', '5 r Gabriel PÃ©ri', '61000', 'FLERS', '1992-12-14 00:00:00', 'O', 'SW', ''),
-('p41', 'Montecot', 'FranÃ§oise', '6 r Paul ValÃ©ry', '17000', 'SAINTES', '1998-07-27 00:00:00', NULL, 'GY', ''),
-('p42', 'Notini', 'Veronique', '5 r Lieut Chabal', '60000', 'BEAUVAIS', '1994-12-12 00:00:00', NULL, 'SW', ''),
-('p49', 'Onfroy', 'Den', '5 r Sidonie Jacolin', '37000', 'TOURS', '1977-10-03 00:00:00', NULL, 'GY', ''),
-('p6', 'Pascreau', 'Charles', '57 bd Mar Foch', '64000', 'PAU', '1997-03-30 00:00:00', NULL, 'SW', ''),
-('p7', 'Pernot', 'Claude-NoÃ«l', '6 r Alexandre 1 de Yougoslavie', '11000', 'NARBONNE', '1990-03-01 00:00:00', NULL, 'SW', ''),
-('p8', 'Perrier', 'MaÃ®tre', '6 r Aubert Dubayet', '71000', 'CHALON SUR SAONE', '1991-06-23 00:00:00', NULL, 'GY', ''),
-('q17', 'Petit', 'Jean-Louis', '7 r Ernest Renan', '50000', 'SAINT LO', '1997-09-06 00:00:00', NULL, 'GY', ''),
-('r24', 'Piquery', 'Patrick', '9 r Vaucelles', '14000', 'CAEN', '1984-07-29 00:00:00', 'O', 'GY', ''),
-('r58', 'Quiquandon', 'JoÃ«l', '7 r Ernest Renan', '29000', 'QUIMPER', '1990-06-30 00:00:00', NULL, 'GY', ''),
-('s10', 'Retailleau', 'Josselin', '88Bis r Saumuroise', '39000', 'DOLE', '1995-11-14 00:00:00', NULL, 'SW', ''),
-('s21', 'Retailleau', 'Pascal', '32 bd Ayrault', '23000', 'MONTLUCON', '1992-09-25 00:00:00', NULL, 'SW', ''),
-('t43', 'Souron', 'Maryse', '7B r Gay Lussac', '21000', 'DIJON', '1995-03-09 00:00:00', NULL, 'SW', ''),
-('t47', 'Tiphagne', 'Patrick', '7B r Gay Lussac', '62000', 'ARRAS', '1997-08-29 00:00:00', NULL, 'SW', ''),
-('t55', 'TrÃ©het', 'Alain', '7D chem Barral', '12000', 'RODEZ', '1994-11-29 00:00:00', NULL, 'SW', ''),
-('t60', 'Tusseau', 'Josselin', '63 r Bon Repos', '28000', 'CHARTRES', '1991-03-29 00:00:00', NULL, 'GY', ''),
-('zzz', 'swiss', 'bourdin', NULL, NULL, NULL, '2003-06-18 00:00:00', NULL, 'BC', '');
+INSERT INTO `visiteur` (`visMatricule`, `visNom`, `visPrenom`, `visAdresse`, `visCp`, `visVille`, `visDateembauche`, `secCode`, `labCode`, `mdp`, `typ_collab`) VALUES
+('a131', 'Villechalane', 'Louis', '8 cours Lafontaine', '29000', 'BREST', '1992-12-11 00:00:00', NULL, 'SW', '123', NULL),
+('a17', 'Andre', 'David', '1 r Aimon de Chissée', '38100', 'GRENOBLE', '1991-08-26 00:00:00', NULL, 'GY', '123', NULL),
+('a55', 'Bedos', 'Christian', '1 r Bénédictins', '65000', 'TARBES', '1987-07-17 00:00:00', NULL, 'GY', '123', 'Delegue'),
+('a93', 'Tusseau', 'Louis', '22 r Renou', '86000', 'POITIERS', '1999-01-02 00:00:00', NULL, 'SW', '123', 'Responsable'),
+('b13', 'Bentot', 'Pascal', '11 av 6 Juin', '67000', 'STRASBOURG', '1996-03-11 00:00:00', NULL, 'GY', NULL, NULL),
+('b16', 'Bioret', 'Luc', '1 r Linne', '35000', 'RENNES', '1997-03-21 00:00:00', NULL, 'SW', NULL, NULL),
+('b19', 'Bunisset', 'Francis', '10 r Nicolas Chorier', '85000', 'LA ROCHE SUR YON', '1999-01-31 00:00:00', NULL, 'GY', NULL, NULL),
+('b25', 'Bunisset', 'Denise', '1 r Lionne', '49100', 'ANGERS', '1994-07-03 00:00:00', NULL, 'SW', NULL, NULL),
+('b28', 'Cacheux', 'Bernard', '114 r Authie', '34000', 'MONTPELLIER', '2000-08-02 00:00:00', NULL, 'GY', NULL, NULL),
+('b34', 'Cadic', 'Eric', '123 r Caponière', '41000', 'BLOIS', '1993-12-06 00:00:00', 'P', 'SW', NULL, NULL),
+('b4', 'Charoze', 'Catherine', '100 pl Géants', '33000', 'BORDEAUX', '1997-09-25 00:00:00', NULL, 'SW', NULL, NULL),
+('b50', 'Clepkens', 'Christophe', '12 r Fédérico Garcia Lorca', '13000', 'MARSEILLE', '1998-01-18 00:00:00', NULL, 'SW', NULL, NULL),
+('b59', 'Cottin', 'Vincenne', '36 sq Capucins', '5000', 'GAP', '1995-10-21 00:00:00', NULL, 'GY', NULL, NULL),
+('c14', 'Daburon', 'François', '13 r Champs Elysées', '6000', 'NICE', '1989-02-01 00:00:00', 'S', 'SW', NULL, NULL),
+('c3', 'De', 'Philippe', '13 r Charles Peguy', '10000', 'TROYES', '1992-05-05 00:00:00', NULL, 'SW', NULL, NULL),
+('c54', 'Debelle', 'Michel', '181 r Caponière', '88000', 'EPINAL', '1991-04-09 00:00:00', NULL, 'SW', NULL, NULL),
+('d13', 'Debelle', 'Jeanne', '134 r Stalingrad', '44000', 'NANTES', '1991-12-05 00:00:00', NULL, 'SW', NULL, NULL),
+('d51', 'Debroise', 'Michel', '2 av 6 Juin', '70000', 'VESOUL', '1997-11-18 00:00:00', 'E', 'GY', NULL, NULL),
+('e22', 'Desmarquest', 'Nathalie', '14 r Fédérico Garcia Lorca', '54000', 'NANCY', '1989-03-24 00:00:00', NULL, 'GY', NULL, NULL),
+('e24', 'Desnost', 'Pierre', '16 r Barral de Montferrat', '55000', 'VERDUN', '1993-05-17 00:00:00', 'E', 'SW', NULL, NULL),
+('e39', 'Dudouit', 'Frédéric', '18 quai Xavier Jouvin', '75000', 'PARIS', '1988-04-26 00:00:00', NULL, 'GY', NULL, NULL),
+('e49', 'Duncombe', 'Claude', '19 av Alsace Lorraine', '9000', 'FOIX', '1996-02-19 00:00:00', NULL, 'GY', NULL, NULL),
+('e5', 'Enault-Pascreau', 'Céline', '25B r Stalingrad', '40000', 'MONT DE MARSAN', '1990-11-27 00:00:00', 'S', 'GY', NULL, NULL),
+('e52', 'Eynde', 'Valérie', '3 r Henri Moissan', '76000', 'ROUEN', '1991-10-31 00:00:00', NULL, 'GY', NULL, NULL),
+('f21', 'Finck', 'Jacques', 'rte Montreuil Bellay', '74000', 'ANNECY', '1993-06-08 00:00:00', NULL, 'SW', NULL, NULL),
+('f39', 'Frémont', 'Fernande', '4 r Jean Giono', '69000', 'LYON', '1997-02-15 00:00:00', NULL, 'GY', NULL, NULL),
+('f4', 'Gest', 'Alain', '30 r Authie', '46000', 'FIGEAC', '1994-05-03 00:00:00', NULL, 'GY', NULL, NULL),
+('g19', 'Gheysen', 'Galassus', '32 bd Mar Foch', '75000', 'PARIS', '1996-01-18 00:00:00', NULL, 'SW', NULL, NULL),
+('g30', 'Girard', 'Yvon', '31 av 6 Juin', '80000', 'AMIENS', '1999-03-27 00:00:00', 'N', 'GY', NULL, NULL),
+('g53', 'Gombert', 'Luc', '32 r Emile Gueymard', '56000', 'VANNES', '1985-10-02 00:00:00', NULL, 'GY', NULL, NULL),
+('g7', 'Guindon', 'Caroline', '40 r Mar Montgomery', '87000', 'LIMOGES', '1996-01-13 00:00:00', NULL, 'GY', NULL, NULL),
+('h13', 'Guindon', 'François', '44 r Picotière', '19000', 'TULLE', '1993-05-08 00:00:00', NULL, 'SW', NULL, NULL),
+('h30', 'Igigabel', 'Guy', '33 gal Arlequin', '94000', 'CRETEIL', '1998-04-26 00:00:00', NULL, 'SW', NULL, NULL),
+('h35', 'Jourdren', 'Pierre', '34 av Jean Perrot', '15000', 'AURRILLAC', '1993-08-26 00:00:00', NULL, 'GY', NULL, NULL),
+('h40', 'Juttard', 'Pierre-Raoul', '34 cours Jean Jaurès', '8000', 'SEDAN', '1992-11-01 00:00:00', NULL, 'GY', NULL, NULL),
+('j45', 'Labouré-Morel', 'Saout', '38 cours Berriat', '52000', 'CHAUMONT', '1998-02-25 00:00:00', 'N', 'SW', NULL, NULL),
+('j50', 'Landré', 'Philippe', '4 av Gén Laperrine', '59000', 'LILLE', '1992-12-16 00:00:00', NULL, 'GY', NULL, NULL),
+('j8', 'Langeard', 'Hugues', '39 av Jean Perrot', '93000', 'BAGNOLET', '1998-06-18 00:00:00', 'P', 'GY', NULL, NULL),
+('k4', 'Lanne', 'Bernard', '4 r Bayeux', '30000', 'NIMES', '1996-11-21 00:00:00', NULL, 'SW', NULL, NULL),
+('k53', 'Le', 'Noël', '4 av Beauvert', '68000', 'MULHOUSE', '1983-03-23 00:00:00', NULL, 'SW', NULL, NULL),
+('l14', 'Le', 'Jean', '39 r Raspail', '53000', 'LAVAL', '1995-02-02 00:00:00', NULL, 'SW', NULL, NULL),
+('l23', 'Leclercq', 'Servane', '11 r Quinconce', '18000', 'BOURGES', '1995-06-05 00:00:00', NULL, 'SW', NULL, NULL),
+('l46', 'Lecornu', 'Jean-Bernard', '4 bd Mar Foch', '72000', 'LA FERTE BERNARD', '1997-01-24 00:00:00', NULL, 'GY', NULL, NULL),
+('l56', 'Lecornu', 'Ludovic', '4 r Abel Servien', '25000', 'BESANCON', '1996-02-27 00:00:00', NULL, 'SW', NULL, NULL),
+('m35', 'Lejard', 'Agnès', '4 r Anthoard', '82000', 'MONTAUBAN', '1987-10-06 00:00:00', NULL, 'SW', NULL, NULL),
+('m45', 'Lesaulnier', 'Pascal', '47 r Thiers', '57000', 'METZ', '1990-10-13 00:00:00', NULL, 'SW', NULL, NULL),
+('n42', 'Letessier', 'Stéphane', '5 chem Capuche', '27000', 'EVREUX', '1996-03-06 00:00:00', NULL, 'GY', NULL, NULL),
+('n58', 'Loirat', 'Didier', 'Les Pêchers cité Bourg la Croix', '45000', 'ORLEANS', '1992-08-30 00:00:00', NULL, 'GY', NULL, NULL),
+('n59', 'Maffezzoli', 'Thibaud', '5 r Chateaubriand', '2000', 'LAON', '1994-12-19 00:00:00', NULL, 'SW', NULL, NULL),
+('o26', 'Mancini', 'Anne', '5 r D\'Agier', '48000', 'MENDE', '1995-01-05 00:00:00', NULL, 'GY', NULL, NULL),
+('p32', 'Marcouiller', 'Gérard', '7 pl St Gilles', '91000', 'ISSY LES MOULINEAUX', '1992-12-24 00:00:00', NULL, 'GY', NULL, NULL),
+('p40', 'Michel', 'Jean-Claude', '5 r Gabriel Péri', '61000', 'FLERS', '1992-12-14 00:00:00', 'O', 'SW', NULL, NULL),
+('p41', 'Montecot', 'Françoise', '6 r Paul Valéry', '17000', 'SAINTES', '1998-07-27 00:00:00', NULL, 'GY', NULL, NULL),
+('p42', 'Notini', 'Veronique', '5 r Lieut Chabal', '60000', 'BEAUVAIS', '1994-12-12 00:00:00', NULL, 'SW', NULL, NULL),
+('p49', 'Onfroy', 'Den', '5 r Sidonie Jacolin', '37000', 'TOURS', '1977-10-03 00:00:00', NULL, 'GY', NULL, NULL),
+('p6', 'Pascreau', 'Charles', '57 bd Mar Foch', '64000', 'PAU', '1997-03-30 00:00:00', NULL, 'SW', NULL, NULL),
+('p7', 'Pernot', 'Claude-Noël', '6 r Alexandre 1 de Yougoslavie', '11000', 'NARBONNE', '1990-03-01 00:00:00', NULL, 'SW', NULL, NULL),
+('p8', 'Perrier', 'Maître', '6 r Aubert Dubayet', '71000', 'CHALON SUR SAONE', '1991-06-23 00:00:00', NULL, 'GY', NULL, NULL),
+('q17', 'Petit', 'Jean-Louis', '7 r Ernest Renan', '50000', 'SAINT LO', '1997-09-06 00:00:00', NULL, 'GY', NULL, NULL),
+('r24', 'Piquery', 'Patrick', '9 r Vaucelles', '14000', 'CAEN', '1984-07-29 00:00:00', 'O', 'GY', NULL, NULL),
+('r58', 'Quiquandon', 'Joël', '7 r Ernest Renan', '29000', 'QUIMPER', '1990-06-30 00:00:00', NULL, 'GY', NULL, NULL),
+('s10', 'Retailleau', 'Josselin', '88Bis r Saumuroise', '39000', 'DOLE', '1995-11-14 00:00:00', NULL, 'SW', NULL, NULL),
+('s21', 'Retailleau', 'Pascal', '32 bd Ayrault', '23000', 'MONTLUCON', '1992-09-25 00:00:00', NULL, 'SW', NULL, NULL),
+('t43', 'Souron', 'Maryse', '7B r Gay Lussac', '21000', 'DIJON', '1995-03-09 00:00:00', NULL, 'SW', NULL, NULL),
+('t47', 'Tiphagne', 'Patrick', '7B r Gay Lussac', '62000', 'ARRAS', '1997-08-29 00:00:00', NULL, 'SW', NULL, NULL),
+('t55', 'Tréhet', 'Alain', '7D chem Barral', '12000', 'RODEZ', '1994-11-29 00:00:00', NULL, 'SW', NULL, NULL),
+('t60', 'Tusseau', 'Josselin', '63 r Bon Repos', '28000', 'CHARTRES', '1991-03-29 00:00:00', NULL, 'GY', NULL, NULL),
+('zzz', 'swiss', 'bourdin', NULL, NULL, NULL, '2003-06-18 00:00:00', NULL, 'BC', NULL, NULL);
 
 --
 -- Index pour les tables déchargées
@@ -907,7 +934,7 @@ ALTER TABLE `presentation`
 -- Index pour la table `presenter`
 --
 ALTER TABLE `presenter`
-  ADD PRIMARY KEY (`rapNumP`,`medDepotlegal`),
+  ADD PRIMARY KEY (`rapNum`,`medDepotlegal`),
   ADD KEY `medDepotlegal` (`medDepotlegal`);
 
 --
@@ -1011,7 +1038,7 @@ ALTER TABLE `inviter`
 -- AUTO_INCREMENT pour la table `offrir`
 --
 ALTER TABLE `offrir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `posseder`
@@ -1029,7 +1056,7 @@ ALTER TABLE `prescrire`
 -- AUTO_INCREMENT pour la table `rapportvisite`
 --
 ALTER TABLE `rapportvisite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `realiser`
@@ -1113,8 +1140,7 @@ ALTER TABLE `prescrire`
 -- Contraintes pour la table `presenter`
 --
 ALTER TABLE `presenter`
-  ADD CONSTRAINT `presenter_ibfk_1` FOREIGN KEY (`rapNumP`) REFERENCES `rapportvisite` (`id`),
-  ADD CONSTRAINT `presenter_ibfk_2` FOREIGN KEY (`medDepotlegal`) REFERENCES `medicament` (`medDepotlegal`);
+  ADD CONSTRAINT `presenter_ibfk_1` FOREIGN KEY (`medDepotlegal`) REFERENCES `medicament` (`medDepotlegal`);
 
 --
 -- Contraintes pour la table `rapportvisite`
