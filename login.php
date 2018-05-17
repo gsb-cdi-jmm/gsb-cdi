@@ -1,3 +1,15 @@
+<?php
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+    //Il n'y a pas de seesion active
+    session_start();
+}
+if(isset($_SESSION['connect']))
+{
+  header('Location: formRAPPORT_VISITE.php');
+}
+
+ ?>
 <!DOCTYPE html>
 <html>
 
