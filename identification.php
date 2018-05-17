@@ -13,10 +13,12 @@ $ligne = $result->fetch();
 
 $mdpbdd = $ligne['password'];
 $prenom = $ligne['visPrenom'];
+$matricule = $ligne['visMatricule'];
 
 if ($mdpSaisie == $mdpbdd) {
   $_SESSION['connect'] = true;
   $_SESSION['prenom'] = $prenom;
+  $_SESSION['matricule'] = $matricule;
   header("Location: formRAPPORT_VISITE.php");
 }
 else {

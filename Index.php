@@ -1,10 +1,15 @@
 
    <?php
+   session_start();
+   if(isset($_SESSION['connect']))
+   {
+     header('Location: formRAPPORT_VISITE.php');
+   }
    include("includes/connexionBdd.php");
    include("includes/head.php");
    include("includes/menu.php");
     ?>
-
+    
 <div class="#" style="">
 
 </div>
