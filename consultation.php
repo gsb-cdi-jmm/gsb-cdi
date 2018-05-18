@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <html>
 <head>
-	<title>Consultation médicament</title>
+	<title>Consultation rapport visite</title>
 <?php
 include("includes/estConnect.php");
 include("includes/connexionBdd.php");
