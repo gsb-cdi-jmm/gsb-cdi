@@ -62,13 +62,23 @@ if (isset($_POST['PROD1'])) {
   $repProd1 = $connexion->query($reqProd1);
   $medicament1 = $repProd1->fetch();
 }
+if (isset($_POST['PROD2'])) {
+  $produit2 = $_POST['PROD2'];
+  //On recupere medDepotlegal grâce à une requete et le nom du produit
+  $reqProd2 = "SELECT medDepotlegal FROM medicament WHERE medNomcommercial = '$produit2'";
+  $repProd2 = $connexion->query($reqProd2);
+  $medicament2 = $repProd2->fetch();
+}
+else {
+  $medicament['0'] = "";
+}
 
 var_dump($medicament1['0']);
 
 var_dump($produit1);
 
 //Requete recuperation du dernier practicien
-$reqLastPra = "SELECT max(rapNum) FROM rapportvisite WHERE praNum = \"" .$praNum['0'] . "\"";
+$reqLastPra = "SELECT max(rapNum) FROM rapportvisite WHERE visMatricule = \"" . $matricule . "\"";
 $repLastPra = $connexion->query($reqLastPra);
 $ligneLastPra = $repLastPra->fetch();
 if ($ligneLastPra['0'] == NULL) {
@@ -92,14 +102,10 @@ if ($dateVisite != "") {
           //Maintenant on vérifie les éléments présenter
           if ($produit1 != "") {
             //Requete insertion dans rapport visite
-            $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf)";
+            $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
             echo "$req";
             $rep = $connexion->exec($req) or die("Erreur dans la requete");
-
-            //Requete insertion dans presenter
-            $reqPres = "INSERT INTO presenter (rapNumP, medDepotlegal) VALUES (" . $ligneLastPra['0'] . ", '3MYC7');";
-            echo "$reqPres";
-            $repPres = $connexion->exec($reqPres) or die("Erreur dans la requete");
+            echo "La requete est Bonne <br />";
 
             echo "<br /><br />La requete est bonne";
           }

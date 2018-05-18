@@ -54,7 +54,7 @@ if ($status == PHP_SESSION_NONE) {
             bouton.setAttribute("class", "zone");
             bouton.setAttribute("id", "but" + pNumero);
         }
-    </script>      
+    </script>
 <?php
 include("includes/estConnect.php");
 include("includes/connexionBdd.php");
@@ -80,7 +80,7 @@ $ligneMed = $resultMed->fetch();
                 <input type="date" size="10" name="RAP_DATEVISITE" class="zone"<?php if (isset($_POST['RAP_DATEVISITE'])) {
                     echo "value='" . $_POST['RAP_DATEVISITE'] . "'";
                 } ?><br>
-            <label class="titre">PRATICIEN :
+            <label class="titre">PRATICIEN :</label>
                 <select name="PRA_NUM" class="zone">
                     <option value=""><?php
                         while ($ligne) {
@@ -90,9 +90,8 @@ $ligneMed = $resultMed->fetch();
                             $ligne = $result->fetch();
                         } ?></option>
                 </select>
-            </label>
-            <label class="titre">REMPLACANT <input type="checkbox" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/></label>
-            <label class="titre">MOTIF :
+            <label class="titre">REMPLACANT</label> <input type="checkbox" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+            <label class="titre">MOTIF :</label>
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
                     <option value="PRD">Périodicité</option>
@@ -101,22 +100,20 @@ $ligneMed = $resultMed->fetch();
                     <option value="SOL">Sollicitation praticien</option>
                     <option value="AUT">Autre</option>
                 </select>
-            </label>
-            <label class="titre">BILAN :
+            <label class="titre">BILAN :</label>
                 <textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
-            </label>
-            <label class="titre">COEFFICIENT DE CONFIANCE :
+            <label class="titre">COEFFICIENT DE CONFIANCE :</label>
                 <select name="CoeffConf">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
                 </select>
-            </label>
         </div>
         <div class="rapport-part">
-            <label class="titre"><h3> Eléments présentés </h3></label>
-            <label class="titre">PRODUIT 1 :
+          <h3><label class="titre"> Eléments présentés</label></h3>
+            <label class="titre">PRODUIT 1 :</label>
                 <select name="PROD1" class="zone">
                     <option value="*">
                         <?php
@@ -128,8 +125,8 @@ $ligneMed = $resultMed->fetch();
                         ?>
                     </option>
                 </select>
-            </label>
-            <label class="titre">PRODUIT 2 :
+
+            <label class="titre">PRODUIT 2 : (Seulement si présenté)</label>
                 <select name="PROD2" class="zone">
                     <option value="*">
                         <?php
@@ -144,8 +141,6 @@ $ligneMed = $resultMed->fetch();
                         ?>
                     </option>
                 </select>
-            </label>
-            <label class="titre">DOCUMENTATION OFFERTE <input name="RAP_DOC" type="checkbox"/></label>
             <label class="titre"><h3>Echanitllons</h3></label>
             <div class="titre" id="lignes">
                 <label class="titre">Produit :</label>
@@ -177,11 +172,10 @@ $ligneMed = $resultMed->fetch();
                 </select>
                 <input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone"/>
             </div>
-            <label class="titre">SAISIE DEFINITIVE <input name="RAP_LOCK" type="checkbox"/></label>
-            <label class="titre">Confirmation
-                <input type="reset"/>
+            <label class="titre"></label>Confirmation
+                <input type="reset" value="annuler"/>
                 <input type="submit"/>
-            </label>
+
         </div>
     </div>
 </form>

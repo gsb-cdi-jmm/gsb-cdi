@@ -156,3 +156,25 @@ hr{
 /************************************/
 /*        Fin des formulaires       */
 /************************************/
+
+/************************************/
+/*            tableaux              */
+/************************************/
+table, tr, td{
+  color:black;
+  text-align:right;
+  border:2px solid black;
+  padding:3px;
+}
+
+ th{
+   color:black;
+   text-align:center;
+   border:2px solid black;
+   padding:3px;
+
+ }
+
+/************************************/
+/*        Fin tableaux              */
+/************************************/
