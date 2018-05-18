@@ -80,7 +80,7 @@ $ligneMed = $resultMed->fetch();
                 <input type="date" size="10" name="RAP_DATEVISITE" class="zone"<?php if (isset($_POST['RAP_DATEVISITE'])) {
                     echo "value='" . $_POST['RAP_DATEVISITE'] . "'";
                 } ?><br>
-            <label class="titre">PRATICIEN :</label>
+            <label class="titre">PRATICIEN :
                 <select name="PRA_NUM" class="zone">
                     <option value=""><?php
                         while ($ligne) {
@@ -90,8 +90,9 @@ $ligneMed = $resultMed->fetch();
                             $ligne = $result->fetch();
                         } ?></option>
                 </select>
-            <label class="titre">REMPLACANT</label> <input type="checkbox" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
-            <label class="titre">MOTIF :</label>
+            </label>
+            <label class="titre">REMPLACANT <input type="checkbox" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/></label>
+            <label class="titre">MOTIF :
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
                     <option value="PRD">Périodicité</option>
@@ -100,20 +101,22 @@ $ligneMed = $resultMed->fetch();
                     <option value="SOL">Sollicitation praticien</option>
                     <option value="AUT">Autre</option>
                 </select>
-            <label class="titre">BILAN :</label>
+            </label>
+            <label class="titre">BILAN :
                 <textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
-            <label class="titre">COEFFICIENT DE CONFIANCE :</label>
+            </label>
+            <label class="titre">COEFFICIENT DE CONFIANCE :
                 <select name="CoeffConf">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
+            </label>
         </div>
         <div class="rapport-part">
-          <h3><label class="titre"> Eléments présentés</label></h3>
-            <label class="titre">PRODUIT 1 :</label>
+            <label class="titre"><h3> Eléments présentés </h3></label>
+            <label class="titre">PRODUIT 1 :
                 <select name="PROD1" class="zone">
                     <option value="*">
                         <?php
@@ -125,8 +128,8 @@ $ligneMed = $resultMed->fetch();
                         ?>
                     </option>
                 </select>
-
-            <label class="titre">PRODUIT 2 : (Seulement si présenté)</label>
+            </label>
+            <label class="titre">PRODUIT 2 :
                 <select name="PROD2" class="zone">
                     <option value="*">
                         <?php
@@ -141,6 +144,7 @@ $ligneMed = $resultMed->fetch();
                         ?>
                     </option>
                 </select>
+            </label>
             <label class="titre">DOCUMENTATION OFFERTE <input name="RAP_DOC" type="checkbox"/></label>
             <label class="titre"><h3>Echanitllons</h3></label>
             <div class="titre" id="lignes">
@@ -173,10 +177,11 @@ $ligneMed = $resultMed->fetch();
                 </select>
                 <input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone"/>
             </div>
-            <label class="titre"></label>Confirmation
-                <input type="reset" value="annuler"/>
+            <label class="titre">SAISIE DEFINITIVE <input name="RAP_LOCK" type="checkbox"/></label>
+            <label class="titre">Confirmation
+                <input type="reset"/>
                 <input type="submit"/>
-
+            </label>
         </div>
     </div>
 </form>
