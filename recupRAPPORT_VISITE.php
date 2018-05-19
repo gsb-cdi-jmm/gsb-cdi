@@ -70,12 +70,9 @@ if (isset($_POST['PROD2'])) {
   $medicament2 = $repProd2->fetch();
 }
 else {
-  $medicament['0'] = "";
+  $medicament['0'] = "Aucun";
 }
 
-var_dump($medicament1['0']);
-
-var_dump($produit1);
 
 //Requete recuperation du dernier practicien
 $reqLastPra = "SELECT max(rapNum) FROM rapportvisite WHERE visMatricule = \"" . $matricule . "\"";

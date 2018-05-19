@@ -90,7 +90,7 @@ $ligneMed = $resultMed->fetch();
                             $ligne = $result->fetch();
                         } ?></option>
                 </select>
-            <label class="titre">REMPLACANT</label> <input type="checkbox" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+            <label class="titre">REMPLACANT</label> <input type="checkbox" name="remplacant" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
             <label class="titre">MOTIF :</label>
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
