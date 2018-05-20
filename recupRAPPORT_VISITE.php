@@ -85,6 +85,33 @@ else {
   $ligneLastPra['0']++;
 }
 
+//Si des echantillons ont été données
+$compteurEchantillon = 0;
+if (isset($_POST['PRA_ECH1'])) {
+  for ($i=0; $i < 10; $i++) {
+    $praEch = 'PRA_ECH' . $i; //On recupere le nom du formulaire
+    if (isset($_POST[$praEch])) {
+      $praEchNom = $_POST[$praEch];//On recupere le nom du medicament
+      //On fait un tableau pour récuperer le nom des Echanitllons
+      $echantillonNom[$i] = $praEchNom;
+    }
+    $praQt = 'PRA_QTE' . $i; //On recupere le nom du formulaire
+    if (isset($_POST[$praQt])) {
+      $praQtNb = $_POST[$praQt]; //On recupere la quantité d'echanitllons
+      //On fait un tableau pour recuperer la quantité d'echanitllons
+      $echantillonQt[$i] = $praQtNb;
+    }
+  }
+}
+$compteurEchantillon = 0;
+for ($i=1; $i < (count($echantillonQt) + 1) ; $i++) {
+  $compteurEchantillon += $echantillonQt[$i];
+  echo "$compteurEchantillon <br />";
+}
+
+var_dump($echantillonNom);
+var_dump($echantillonQt);
+
 //On vérifie que le praticien à rentrer toutes les informations correctements
 //On verifie que la date n'est pas vide
 if ($dateVisite != "") {
@@ -98,18 +125,28 @@ if ($dateVisite != "") {
         if ($coeffConf != "") {
           //Maintenant on vérifie les éléments présenter
           if ($produit1 != "") {
-            //Requete insertion dans rapport visite
-            $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
-            echo "$req";
-            $rep = $connexion->exec($req) or die("Erreur dans la requete");
-            echo "La requete est Bonne <br />";
+            //On verifie que 10 echantillons ou moins on été entré
+            if ($compteurEchantillon < 11) {
+              //Requete insertion dans rapport visite
+              $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
+              echo "$req";
+              $rep = $connexion->exec($req) or die("Erreur dans la requete");
+              echo "La requete est Bonne <br />";
+              echo count($echantillonQt);
 
-            echo "<br /><br />La requete est bonne";
+              echo "<br /><br />La requete est bonne";// code...
+            }
+            else{
+              echo "<h2 style=\"color:red;text-align:center\">Veuillez entrer moins de 10 echantillons au total</h2>";
+              include('formRAPPORT_VISITE.php');
+            }
+
           }
           else{
             echo "<h2 style=\"color:red;text-align:center\">Le premier produit n'a pas été complété</h2>";
             include('formRAPPORT_VISITE.php');
           }
+
         }
         else {
           echo "<h2 style=\"color:red;text-align:center\">Le Coéfficient de confiance n'a pas été rempli</h2>";

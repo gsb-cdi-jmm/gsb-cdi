@@ -39,7 +39,7 @@ $ligneDate = $resultDate->fetch();
 	//Requete de recherche
 	$req = "SELECT * FROM rapportvisite WHERE rapDate = '$dateDeRecherche' ORDER BY rapNum";
 	$rep = $connexion->query($req);
-	$ligne = $rep->fetch();
+	$ligne = $rep->fetchAll(PDO::FETCH_OBJ);
 
 	//Affhichage de la date
 	echo "<h2>Voici le(s) rapport(s) pour le $dateDeRecherche : </h2>";
@@ -47,106 +47,87 @@ $ligneDate = $resultDate->fetch();
 	 ?>
 
 
-
 	<table>
 		<tr>
 			<th>Matricule du visiteur</th>
-			<?php while ($ligne) {
-			?><td><?php echo $ligne['visMatricule']; ?></td><?php
-			$ligne = $rep->fetch();
-		} ?>
-		</tr>
-		<tr>
-			<th>Numero du rapport</th>
 			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><?php echo $ligne['rapNum']; ?></td><?php
-			$ligne = $rep->fetch();
-		} ?>
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->visMatricule ?></td>
+				<?php
+			}
+			?>
 		</tr>
 		<tr>
 			<th>Practicien</th>
 			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><?php echo $ligne['praNum']; ?></td><?php
-			$ligne = $rep->fetch();
-		} ?>
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->praNum ?></td>
+				<?php
+			}
+			?>
 		</tr>
 		<tr>
 			<th>Motif du rapport</th>
 			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><input name="RAP_MOTIF" type="text" style="text-align:right"value="<?php echo $ligne['rapMotif'] ?>"></td><?php
-			$ligne = $rep->fetch();
-		} ?>
-		</tr>
-		<tr>
-			<th>Produit 1</th>
-			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><input type="text" name="PROD1" style="text-align:right"value="<?php echo $ligne['prod1'] ?>"></td><?php
-			$ligne = $rep->fetch();
-	  	} ?>
-		</tr>
-		<tr>
-			<th>Produit 2</th>
-			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><input name="PROD2" type="text" style="text-align:right"value="<?php echo $ligne['prod2'] ?>"></td><?php
-			$ligne = $rep->fetch();
-  		} ?>
-		</tr>
-		<tr>
-			<th>Coefficient de confiance</th>
-			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-		  while ($ligne) {
-			?><td><select  name="CoeffConf">
-				<option style="text-align:right" value="<?php echo $ligne['CoeffCOnf'] ?>"><?php echo $ligne['CoeffCOnf'] ?></option>
-				<?php
-				for ($i=1; $i < 5; $i++) {
-					if ($i != $ligne['CoeffCOnf']) {
-						?><option style="text-align:right" value="<?php echo $i?>"><?php echo $i ?></option><?php
-					}
-				}
+			foreach ($ligne as $key){
 				?>
-			</select>  </td><?php
-			$ligne = $rep->fetch();
-		} ?>
+					<td><?= $key->rapMotif  ?></td>
+				<?php
+			}
+			?>
 		</tr>
 		<tr>
-			<th>Bilan du rapport</th>
+			<th>Produit 1 </th>
 			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><textarea  name="RAP_BILAN" style="text-align:right" ><?php echo $ligne['rapBilan']; ?></textarea></td><?php
-			$ligne = $rep->fetch();
-		} ?>
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->prod1 ?></td>
+				<?php
+			}
+			?>
 		</tr>
 		<tr>
-			<td>
-
-			</td>
+			<th>Produit 2 </th>
 			<?php
-			$rep = $connexion->query($req);
-			$ligne = $rep->fetch();
-			while ($ligne) {
-			?><td><?php echo "<form action=\"modifierRapport.php\"><input type='submit' value='Modifier ce rapport' /></form>" ?></td><?php
-			$ligne = $rep->fetch();
-		} ?>
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->prod2 ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Coefficient de confiance </th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->CoeffCOnf ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Bilan du rapport </th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->rapBilan ?></td>
+				<?php
+			}
+			?>
+		</tr>
 
+		<tr>
+			<th>Options </th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><a href="recupConsultation.php?id=<?= $key->id ?>">Modifier</a></td>
+				<?php
+			}
+			?>
 		</tr>
 	</table>
 <?php endif; ?>
