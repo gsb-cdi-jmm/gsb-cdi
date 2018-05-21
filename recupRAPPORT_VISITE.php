@@ -103,6 +103,7 @@ if (isset($_POST['PRA_ECH1'])) {
     }
   }
 }
+
 $compteurEchantillon = 0;
 for ($i=1; $i < (count($echantillonQt) + 1) ; $i++) {
   $compteurEchantillon += $echantillonQt[$i];
@@ -133,8 +134,15 @@ if ($dateVisite != "") {
               $rep = $connexion->exec($req) or die("Erreur dans la requete");
               echo "La requete est Bonne pour le rapport de visite<br />";
 
-              for ($i=0; $i < count($echantillonQt); $i++) {
-                $reqInsert = "INSERT INTO offrir(visMatricule, rapNum, medDepotlegal, offQte) values(('$matricule', " . $ligneLastPra['0'] . ",)";
+              for ($i=1; $i <= count($echantillonQt); $i++) {
+                $reqMedDepotLegal = "SELECT medDepotlegal FROM medicament WHERE medNomcommercial = '$echantillonNom[$i]' ";
+                $repMedDepotLegal = $connexion->query($reqMedDepotLegal);
+                $ligneMedDepotLegal = $repMedDepotLegal->fetch();
+                echo "<br /> Le nom du depot legal est " . $ligneMedDepotLegal['0'];
+                echo "<br /> La requete ".$reqMedDepotLegal;
+                $reqInsert = "INSERT INTO offrir(visMatricule, rapNum, medDepotlegal, offQte) values('$matricule', " . $ligneLastPra['0'] . ", '" . $ligneMedDepotLegal['0'] . "', ". $echantillonQt[$i] .")";
+                echo $reqInsert;
+                $rep = $connexion->exec($reqInsert) or die("Erreur dans la requete");
               }
 
               echo count($echantillonQt);
