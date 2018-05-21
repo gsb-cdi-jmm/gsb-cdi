@@ -39,7 +39,7 @@ $ligneDate = $resultDate->fetch();
 	//Requete de recherche
 	$req = "SELECT * FROM rapportvisite WHERE rapDate = '$dateDeRecherche' ORDER BY rapNum";
 	$rep = $connexion->query($req);
-	$ligne = $rep->fetchAll(PDO::FETCH_OBJ);
+	$ligne = $rep->fetchAll(PDO::FETCH_OBJ);//Permet de retourner un objet
 
 	//Affhichage de la date
 	echo "<h2>Voici le(s) rapport(s) pour le $dateDeRecherche : </h2>";
@@ -54,6 +54,16 @@ $ligneDate = $resultDate->fetch();
 			foreach ($ligne as $key){
 				?>
 					<td><?= $key->visMatricule ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Numero de rapport</th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->rapNum ?></td>
 				<?php
 			}
 			?>

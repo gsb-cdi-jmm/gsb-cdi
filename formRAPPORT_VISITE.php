@@ -95,8 +95,8 @@ $ligneMed = $resultMed->fetch();
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
                     <option value="PRD">Périodicité</option>
-                    <option value="ACT">Actualisation</option>
-                    <option value="REL">Relance</option>
+                    <option value="ACT">Actualisation annuel</option>
+                    <option value="REL">Relance annuelle</option>
                     <option value="SOL">Sollicitation praticien</option>
                     <option value="AUT">Autre</option>
                 </select>

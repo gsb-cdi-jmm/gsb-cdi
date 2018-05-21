@@ -33,10 +33,10 @@ if (isset($_POST['RAP_MOTIF'])) {
   //On verifie quelle valeur à pris le motif afin de lui attribuer une valeure compréhensible
   switch ($rapMotif) {
     case 'PRD':
-      $rapMotif = 'Périodicité';
+      $rapMotif = 'Periodicite';
       break;
       case 'ACT':
-        $rapMotif = 'Actualisation';
+        $rapMotif = 'Actualisation annuel';
         break;
         case 'REL':
           $rapMotif = 'Relance Annuel';
@@ -131,7 +131,12 @@ if ($dateVisite != "") {
               $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
               echo "$req";
               $rep = $connexion->exec($req) or die("Erreur dans la requete");
-              echo "La requete est Bonne <br />";
+              echo "La requete est Bonne pour le rapport de visite<br />";
+
+              for ($i=0; $i < count($echantillonQt); $i++) {
+                $reqInsert = "INSERT INTO offrir(visMatricule, rapNum, medDepotlegal, offQte) values(('$matricule', " . $ligneLastPra['0'] . ",)";
+              }
+
               echo count($echantillonQt);
 
               echo "<br /><br />La requete est bonne";// code...
