@@ -6,6 +6,12 @@ body, html {
   color: white;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 /************************************/
 /* Début stylisation de page de login */
 /************************************/
@@ -152,6 +158,10 @@ hr{
  .rapport-part {
      min-width: 500px;
  }
+
+.clear {
+    clear: both;
+}
 
 /************************************/
 /*        Fin des formulaires       */

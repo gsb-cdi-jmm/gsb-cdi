@@ -90,7 +90,7 @@ $ligneMed = $resultMed->fetch();
                             $ligne = $result->fetch();
                         } ?></option>
                 </select>
-            <label class="titre">REMPLACANT</label> <input type="checkbox" name="remplacant" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+            <label class="titre">REMPLACANT : <input type="checkbox" style="margin-left: 16px" name="remplacant" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/></label>
             <label class="titre">MOTIF :</label>
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
@@ -102,7 +102,7 @@ $ligneMed = $resultMed->fetch();
                 </select>
             <label class="titre">BILAN :</label>
                 <textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
-            <label class="titre">COEFFICIENT DE CONFIANCE :</label>
+            <label class="titre" style="width: 250px; margin-top: 5px">COEFFICIENT DE CONFIANCE :
                 <select name="CoeffConf">
                   <option value=""></option>
                   <option value="1">1</option>
@@ -110,6 +110,7 @@ $ligneMed = $resultMed->fetch();
                   <option value="3">3</option>
                   <option value="4">4</option>
                 </select>
+            </label>
         </div>
         <div class="rapport-part">
           <h3><label class="titre"> Eléments présentés</label></h3>
@@ -172,10 +173,9 @@ $ligneMed = $resultMed->fetch();
                 </select>
                 <input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone"/>
             </div>
-            <label class="titre"></label>Confirmation
+            <label class="titre" style="width: 250px">Confirmation
                 <input type="reset" value="annuler"/>
-                <input type="submit"/>
-
+                <input type="submit"/></label>
         </div>
     </div>
 </form>
