@@ -18,12 +18,7 @@
                     <li><a href="formRAPPORT_VISITE.php">Nouveaux</a></li>
                     <li><a href="consultation.php">Consulter</a></li>
                 </ul>
-                <li>Consulter</li>
-                <ul>
-                    <li><a href="formMEDICAMENT.php">Médicaments</a></li>
-                    <li><a href="formPRATICIEN.php">Praticiens</a></li>
-                    <li><a href="formVISITEUR.php">Autres visiteurs</a></li>
-                </ul>
+                <li><a href="deconnexion.php" onclick="confirm('Voulez vous vous deconnecter?')">Se deconnecter</a></li>
             </ul>
 
         <?php endif; ?>

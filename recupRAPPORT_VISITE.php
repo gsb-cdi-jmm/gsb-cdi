@@ -103,14 +103,13 @@ if (isset($_POST['PRA_ECH1'])) {
     }
   }
 }
+
 $compteurEchantillon = 0;
 for ($i=1; $i < (count($echantillonQt) + 1) ; $i++) {
   $compteurEchantillon += $echantillonQt[$i];
-  echo "$compteurEchantillon <br />";
 }
 
-var_dump($echantillonNom);
-var_dump($echantillonQt);
+
 
 //On vérifie que le praticien à rentrer toutes les informations correctements
 //On verifie que la date n'est pas vide
@@ -129,17 +128,21 @@ if ($dateVisite != "") {
             if ($compteurEchantillon < 11) {
               //Requete insertion dans rapport visite
               $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
-              echo "$req";
               $rep = $connexion->exec($req) or die("Erreur dans la requete");
-              echo "La requete est Bonne pour le rapport de visite<br />";
 
-              for ($i=0; $i < count($echantillonQt); $i++) {
-                $reqInsert = "INSERT INTO offrir(visMatricule, rapNum, medDepotlegal, offQte) values(('$matricule', " . $ligneLastPra['0'] . ",)";
+              for ($i=1; $i <= count($echantillonQt); $i++) {
+                //On recupere le nom du depot legal du medicament
+                $reqMedDepotLegal = "SELECT medDepotlegal FROM medicament WHERE medNomcommercial = '$echantillonNom[$i]' ";
+                $repMedDepotLegal = $connexion->query($reqMedDepotLegal);
+                $ligneMedDepotLegal = $repMedDepotLegal->fetch();
+                //Insertion des echantillons
+                $reqInsert = "INSERT INTO offrir(visMatricule, rapNum, medDepotlegal, offQte) values('$matricule', " . $ligneLastPra['0'] . ", '" . $ligneMedDepotLegal['0'] . "', ". $echantillonQt[$i] .")";
+                $rep = $connexion->exec($reqInsert) or die("Erreur dans la requete");
               }
-
-              echo count($echantillonQt);
-
-              echo "<br /><br />La requete est bonne";// code...
+              ?>
+                <h1 style="text-align: center;color:#5599EE;">Votre rapport a été correctement enregistré</h1>
+              <?php
+              include("formRAPPORT_VISITE.php");
             }
             else{
               echo "<h2 style=\"color:red;text-align:center\">Veuillez entrer moins de 10 echantillons au total</h2>";
@@ -178,48 +181,5 @@ if ($dateVisite != "") {
   echo "<h2 style=\"color:red;text-align:center\">La date n'est pas rempli correctement</h2>";
   include('formRAPPORT_VISITE.php');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  ?>

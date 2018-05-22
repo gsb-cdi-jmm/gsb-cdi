@@ -75,9 +75,39 @@ echo "<h1 style=\"text-align:center\">Modification du rapport numero " . $result
 		?>
 
 
-	</select><br>
-  Produit 1 : <input type="text" name="PROD1" value="<?php echo $resultat['prod1'] ?>"><br>
-  Produit 2 : <input type="text" name="PROD2" value="<?php echo $resultat['prod2'] ?>"><br>
+	</select><br><br>
+  Produit 1 :
+	<select name="PROD1">
+		<option value="<?php echo $resultat['prod1'] ?>"><?php echo $resultat['prod1'] ?></option>
+		<option value=""></option>
+		<?php
+		//Requete qui va permettre d'afficher tout les médicaments
+		$reqSqlMed = "SELECT medNomcommercial FROM medicament";
+		$resultMed = $connexion->query($reqSqlMed);
+		$ligneMed = $resultMed->fetch();
+
+		while ($ligneMed) {
+				$medNom = $ligneMed['medNomcommercial'];
+				echo "<option value='$medNom'>$medNom</option>";
+				$ligneMed = $resultMed->fetch();
+		}
+		?>
+	</select><br><br>
+  Produit 2 :
+	<select name="PROD2">
+		<option value="<?php echo $resultat['prod2'] ?>"><?php echo $resultat['prod2'] ?></option>
+		<option value=""></option>
+		<?php
+		//On reinitialise la liste de medicament au début pour pouvoir les afficher de nouveau
+		$resultMed2 = $connexion->query($reqSqlMed);
+		$ligneMed2 = $resultMed2->fetch();
+		while ($ligneMed2) {
+				$medNom = $ligneMed2['medNomcommercial'];
+				echo "<option value='$medNom'>$medNom</option>";
+				$ligneMed2 = $resultMed2->fetch();
+		}
+		?>
+	</select><br><br>
   Coefficient de confiance :
 		<select name="CoeffConf">
 			<option value="<?php echo $resultat['CoeffCOnf']; ?>"><?php echo $resultat['CoeffCOnf']; ?></option>
@@ -87,7 +117,7 @@ echo "<h1 style=\"text-align:center\">Modification du rapport numero " . $result
 					echo "<option value=\"$i\">$i</option>";
 				}
 			} ?>
-		</select><br>
-  Bilan du rapport : <textarea type="text" name="RAP_BILAN" ><?php echo $resultat['rapBilan']; ?></textarea><br>
+		</select><br><br>
+  Bilan du rapport : <textarea type="text" name="RAP_BILAN" ><?php echo $resultat['rapBilan']; ?></textarea><br><br>
   <input type="submit" name="update" value="Modifier">
 </form>
