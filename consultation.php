@@ -19,7 +19,8 @@ $ligneDate = $resultDate->fetch();
 
 ?>
 <form action="consultation.php" method="post">
-	Choisissez la date du rapport à consulter : <select  name="recherche">
+	Choisissez la date du rapport à consulter :
+	<select  name="recherche">
 		<option value="*">
 				<?php
 				while ($ligneDate) {

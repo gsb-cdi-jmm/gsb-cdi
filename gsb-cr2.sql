@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 22 mai 2018 à 14:28
+-- Généré le :  ven. 18 mai 2018 à 09:55
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -237,29 +237,7 @@ CREATE TABLE `offrir` (
 
 INSERT INTO `offrir` (`id`, `visMatricule`, `rapNum`, `medDepotlegal`, `offQte`) VALUES
 (1, 'a17', 4, '3MYC7', 3),
-(2, 'a17', 4, 'AMOX45', 12),
-(3, 'a131', 38, 'DOLRIL7', 3),
-(4, 'a131', 40, 'CARTION6', 1),
-(5, 'a131', 40, 'DIMIRTAM6', 5),
-(6, 'a131', 40, 'DOLRIL7', 3),
-(7, 'a131', 41, 'DEPRIL9', 4),
-(8, 'a131', 41, 'DIMIRTAM6', 3),
-(9, 'a131', 41, '3MYC7', 1),
-(10, 'a131', 42, 'CARTION6', 3),
-(11, 'a131', 42, 'CLAZER6', 3),
-(12, 'a131', 42, 'DORNOM8', 1),
-(13, 'a131', 43, 'CARTION6', 3),
-(14, 'a131', 43, 'CLAZER6', 3),
-(15, 'a131', 43, 'DORNOM8', 1),
-(16, 'a131', 44, 'CARTION6', 3),
-(17, 'a131', 44, 'CLAZER6', 3),
-(18, 'a131', 44, 'DORNOM8', 1),
-(19, 'a131', 45, 'CARTION6', 3),
-(20, 'a131', 45, 'CLAZER6', 3),
-(21, 'a131', 45, 'DORNOM8', 1),
-(22, 'a131', 44, 'CARTION6', 1),
-(23, 'a131', 45, 'DEPRIL9', 4),
-(24, 'a131', 45, 'DIMIRTAM6', 3);
+(2, 'a17', 4, 'AMOX45', 12);
 
 -- --------------------------------------------------------
 
@@ -300,8 +278,8 @@ CREATE TABLE `praticien` (
 INSERT INTO `praticien` (`praNum`, `praNom`, `praPrenom`, `praAdresse`, `praCp`, `praVille`, `praCoefnotoriete`, `typCode`, `Remplacement`) VALUES
 (1, 'Notini', 'Alain', '114 r Authie', '85000', 'LA ROCHE SUR YON', 290.03, 'MH', 0),
 (2, 'Gosselin', 'Albert', '13 r Devon', '41000', 'BLOIS', 307.49, 'MV', 0),
-(3, 'Delahaye', 'André', '36 av 6 Juin', '25000', 'BESANCON', 185.79, 'PS', 0),
-(4, 'Leroux', 'André', '47 av Robert Schuman', '60000', 'BEAUVAIS', 172.04, 'PH', 0),
+(3, 'Delahaye', 'AndrÃ©', '36 av 6 Juin', '25000', 'BESANCON', 185.79, 'PS', 0),
+(4, 'Leroux', 'AndrÃ©', '47 av Robert Schuman', '60000', 'BEAUVAIS', 172.04, 'PH', 0),
 (5, 'Desmoulins', 'Anne', '31 r St Jean', '30000', 'NIMES', 94.75, 'PO', 0),
 (6, 'Mouel', 'Anne', '27 r Auvergne', '80000', 'AMIENS', 45.2, 'MH', 0),
 (7, 'Desgranges-Lentz', 'Antoine', '1 r Albert de Mun', '29000', 'MORLAIX', 20.07, 'MV', 0),
@@ -413,6 +391,24 @@ CREATE TABLE `presentation` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `presenter`
+--
+
+CREATE TABLE `presenter` (
+  `rapNumP` int(11) NOT NULL,
+  `medDepotlegal` varchar(10) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `presenter`
+--
+
+INSERT INTO `presenter` (`rapNumP`, `medDepotlegal`) VALUES
+(1, 'BACTIG10');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `rapportvisite`
 --
 
@@ -424,62 +420,24 @@ CREATE TABLE `rapportvisite` (
   `rapDate` datetime DEFAULT NULL,
   `rapBilan` varchar(255) DEFAULT NULL,
   `rapMotif` varchar(255) DEFAULT NULL,
-  `CoeffCOnf` int(1) NOT NULL,
-  `prod1` varchar(10) NOT NULL,
-  `prod2` varchar(10) NOT NULL
+  `CoeffCOnf` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `rapportvisite`
 --
 
-INSERT INTO `rapportvisite` (`id`, `visMatricule`, `rapNum`, `praNum`, `rapDate`, `rapBilan`, `rapMotif`, `CoeffCOnf`, `prod1`, `prod2`) VALUES
-(1, 'a131', 1, 23, '2002-04-18 00:00:00', 'Médecin curieux, à  recontactcer en décembre pour réunion', 'Actualisation annuelle', 1, 'TRIMYCINE', 'Aucun'),
-(2, 'a131', 2, 41, '2003-03-23 00:00:00', 'RAS\r\nChangement de tel : 05 89 89 89 89', 'Rapport Annuel', 2, 'ADIMOL', 'Aucun'),
-(3, 'a17', 3, 4, '2003-05-21 00:00:00', 'Changement de direction, redï¿½finition de la politique mï¿½dicamenteuse, recours au gÃ©nÃ©rique', 'Baisse activite', 3, 'AMOXAR', 'Aucun'),
-(23, 'a131', 6, 3, '2018-05-01 00:00:00', 'c\'est le bilan du rapport 6', 'Sollicitation praticien', 2, 'AMOPIL7', 'BACTIVIL'),
-(24, 'a131', 11, 3, '2018-05-01 00:00:00', 'kuytrezrtykutretjgh', 'Relance Annuelle', 3, 'AMOPIL7', 'AMOPIL7'),
-(25, 'a131', 12, 4, '2018-05-08 00:00:00', 'J\'ai attrap&eacute; ebola', 'Actualisation', 2, 'ADIMOL9', 'ADIMOL9'),
-(26, 'a131', 13, 6, '2018-05-02 00:00:00', 'test des 2 produits', 'Sollicitation praticien', 3, '3MYC7', 'ADIMOL9'),
-(27, 'a131', 14, 5, '2018-05-09 00:00:00', 'tesst 1/2 3', 'Actualisation', 3, 'AMOPIL7', 'Aucun'),
-(28, 'a131', 15, 6, '2018-05-03 00:00:00', 'Je pense que le practicien va me prendre des medicaments', 'Actualisation', 4, 'AMOPIL7', 'Aucun'),
-(31, 'a131', 18, 5, '2018-05-01 00:00:00', 'Un bilan ', 'Sollicitation praticien', 4, 'AMOX45', 'APATOUX22'),
-(32, 'a131', 19, 3, '2018-05-17 00:00:00', 'un test des echantillon', 'Sollicitation praticien', 4, 'AMOX45', 'AMOPIL7'),
-(33, 'a131', 20, 3, '2018-05-17 00:00:00', 'un test des echantillon', 'Sollicitation praticien', 4, 'AMOX45', 'AMOPIL7'),
-(34, 'a131', 21, 3, '2018-05-17 00:00:00', 'un test des echantillon', 'Sollicitation praticien', 4, 'AMOX45', 'AMOPIL7'),
-(35, 'a131', 22, 3, '2018-05-17 00:00:00', 'un test des echantillon', 'Sollicitation praticien', 4, 'AMOX45', 'AMOPIL7'),
-(36, 'a131', 23, 14, '2018-05-09 00:00:00', 'test echantiollon', 'Relance Annuel', 2, 'APATOUX22', 'DEPRIL9'),
-(37, 'a131', 24, 3, '2018-05-16 00:00:00', 'tyjukgjhgnfbvdgb', 'Sollicitation praticien', 3, 'AMOPIL7', 'APATOUX22'),
-(38, 'a131', 25, 3, '2018-05-16 00:00:00', 'tyjukgjhgnfbvdgb', 'Sollicitation praticien', 3, 'AMOPIL7', 'APATOUX22'),
-(58, 'a131', 26, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(59, 'a131', 27, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(60, 'a131', 28, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(61, 'a131', 29, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(62, 'a131', 30, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(63, 'a131', 31, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(64, 'a131', 32, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(65, 'a131', 33, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(66, 'a131', 34, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(67, 'a131', 35, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(68, 'a131', 36, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(69, 'a131', 36, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(70, 'a131', 36, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(71, 'a131', 36, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(72, 'a131', 37, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(73, 'a131', 37, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(74, 'a131', 37, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(75, 'a131', 37, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(76, 'a131', 38, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(77, 'a131', 38, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(78, 'a131', 38, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(79, 'a131', 38, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(80, 'a131', 39, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(81, 'a131', 40, 5, '2018-05-16 00:00:00', 'test echantillon', 'Sollicitation praticien', 3, 'AMOXIG12', 'AMOXIG12'),
-(82, 'a131', 41, 10, '2018-05-19 00:00:00', 'Je suis assez confiant', 'Periodicite', 3, 'ADIMOL9', '3MYC7'),
-(83, 'a131', 42, 5, '2018-05-02 00:00:00', 'C\'est bon pour le medecin', 'Periodicite', 3, 'AMOPIL7', 'AMOX45'),
-(84, 'a131', 43, 5, '2018-05-16 00:00:00', 'Test gsb-cdi-master', 'Relance Annuel', 3, '3MYC7', 'ADIMOL9'),
-(85, 'a131', 44, 3, '2018-05-16 00:00:00', 'test a voir', 'Sollicitation praticien', 2, 'AMOPIL7', 'AMOX45'),
-(86, 'a131', 45, 5, '2018-05-08 00:00:00', 'test version final v1', 'Sollicitation praticien', 2, 'APATOUX22', 'AMOX45');
+INSERT INTO `rapportvisite` (`id`, `visMatricule`, `rapNum`, `praNum`, `rapDate`, `rapBilan`, `rapMotif`, `CoeffCOnf`) VALUES
+(1, 'a131', 3, 23, '2002-04-18 00:00:00', 'Médecin curieux, à  recontatcer en décembre pour réunion', 'Actualisation annuelle', 0),
+(2, 'a131', 7, 41, '2003-03-23 00:00:00', 'RAS\r\nChangement de tel : 05 89 89 89 89', 'Rapport Annuel', 0),
+(3, 'a17', 4, 4, '2003-05-21 00:00:00', 'Changement de direction, redéfinition de la politique médicamenteuse, recours au gÃ©nÃ©rique', 'Baisse activité', 0),
+(4, 'a131', 5, 4, '2018-05-09 00:00:00', 'un bilan', 'Relance Annuel', 2),
+(5, 'a131', 6, 4, '2018-05-09 00:00:00', 'un deuxieme bilan', 'Relance Annuel', 2),
+(6, 'a131', 7, 4, '2018-05-09 00:00:00', 'un autre bilan', 'Relance Annuel', 2),
+(7, 'a131', 8, 4, '2018-05-09 00:00:00', 'encore un bilan', 'Relance Annuel', 2),
+(8, 'a131', 9, 4, '2018-05-09 00:00:00', 'puis un bilan', 'Relance Annuel', 2),
+(9, 'a131', 10, 4, '2018-05-09 00:00:00', 'ça c\'est un bilan', 'Relance Annuel', 2),
+(10, 'a131', 1, 6, '2018-05-16 00:00:00', 'et encore un autre bilan', 'Relance Annuel', 2);
 
 -- --------------------------------------------------------
 
@@ -960,13 +918,19 @@ ALTER TABLE `presentation`
   ADD PRIMARY KEY (`preCode`);
 
 --
+-- Index pour la table `presenter`
+--
+ALTER TABLE `presenter`
+  ADD PRIMARY KEY (`rapNumP`,`medDepotlegal`),
+  ADD KEY `medDepotlegal` (`medDepotlegal`);
+
+--
 -- Index pour la table `rapportvisite`
 --
 ALTER TABLE `rapportvisite`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_{8ee7b4b5e5094735b4df9ef80ac6fa90}` (`praNum`),
-  ADD KEY `FK_{c0c347fc964646199e2a572232ab4654}` (`visMatricule`),
-  ADD KEY `prod1` (`prod1`);
+  ADD KEY `FK_{c0c347fc964646199e2a572232ab4654}` (`visMatricule`);
 
 --
 -- Index pour la table `realiser`
@@ -1061,7 +1025,7 @@ ALTER TABLE `inviter`
 -- AUTO_INCREMENT pour la table `offrir`
 --
 ALTER TABLE `offrir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `posseder`
@@ -1079,7 +1043,7 @@ ALTER TABLE `prescrire`
 -- AUTO_INCREMENT pour la table `rapportvisite`
 --
 ALTER TABLE `rapportvisite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `realiser`
@@ -1158,6 +1122,13 @@ ALTER TABLE `prescrire`
   ADD CONSTRAINT `FK_{02233D94-7C64-4199-B94D-8E272446F5A6}` FOREIGN KEY (`medDepotlegal`) REFERENCES `medicament` (`medDepotlegal`),
   ADD CONSTRAINT `FK_{2551EBD9-3594-4572-9B70-C3ADA46DC4AE}` FOREIGN KEY (`tinCode`) REFERENCES `typeindividu` (`tinCode`),
   ADD CONSTRAINT `FK_{C90A61AD-D8EF-48C0-8F11-39ADCC0CB9E6}` FOREIGN KEY (`dosCode`) REFERENCES `dosage` (`dosCode`);
+
+--
+-- Contraintes pour la table `presenter`
+--
+ALTER TABLE `presenter`
+  ADD CONSTRAINT `presenter_ibfk_1` FOREIGN KEY (`rapNumP`) REFERENCES `rapportvisite` (`id`),
+  ADD CONSTRAINT `presenter_ibfk_2` FOREIGN KEY (`medDepotlegal`) REFERENCES `medicament` (`medDepotlegal`);
 
 --
 -- Contraintes pour la table `rapportvisite`
