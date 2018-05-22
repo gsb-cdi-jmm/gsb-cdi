@@ -22,7 +22,7 @@
             <ul>
               <li>Consulter</li>
               <ul>
-                <li><a href="#">Medicaments</a></li>
+                <li><a href="consultMEDICAMENT.php">Medicaments</a></li>
                 <li><a href="consultPRATICIEN.php">Practicien</a></li>
                 <li><a href="consultation.php">Compte rendu</a></li>
               </ul>

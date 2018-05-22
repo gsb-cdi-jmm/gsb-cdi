@@ -126,6 +126,9 @@ if ($dateVisite != "") {
           if ($produit1 != "") {
             //On verifie que 10 echantillons ou moins on été entré
             if ($compteurEchantillon < 11) {
+              if (isset($_POST['remplacant'])) {
+                // code...
+              }
               //Requete insertion dans rapport visite
               $req = "INSERT INTO rapportvisite(visMatricule, rapNum, praNum, rapDate, rapBilan, rapMotif, CoeffConf, prod1, prod2 ) values('$matricule', " . $ligneLastPra['0'] . ", " . $praNum['0'] . ", '$dateVisite', " . $rapBilan . ", '$rapMotif', $coeffConf, '" . $medicament1['0'] . "', '" . $medicament2['0'] . "')";
               $rep = $connexion->exec($req) or die("Erreur dans la requete");

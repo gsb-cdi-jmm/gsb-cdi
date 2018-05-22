@@ -90,7 +90,7 @@ $ligneMed = $resultMed->fetch();
                             $ligne = $result->fetch();
                         } ?></option>
                 </select>
-            <label class="titre">REMPLACANT : <input type="checkbox" style="margin-left: 16px" name="remplacant" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/></label>
+            <label class="titre">REMPLACANT : <input type="checkbox" style="margin-left: 16px" name="remplacant" /></label>
             <label class="titre">MOTIF :</label>
                 <select name="RAP_MOTIF" class="zone">
                     <option value=""></option>
@@ -174,8 +174,9 @@ $ligneMed = $resultMed->fetch();
                 <input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone"/>
             </div>
             <label class="titre" style="width: 250px">Confirmation
-                <input type="reset" value="annuler"/>
-                <input type="submit"/></label>
+              <input type="submit"/>
+              <input type="reset" value="annuler"/>
+            </label>
         </div>
     </div>
 </form>

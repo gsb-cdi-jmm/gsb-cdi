@@ -35,106 +35,112 @@ $ligne = $result->fetch();
 
 <?php if (isset($_POST['recherche'])): ?>
 	<?php
-	$dateDeRecherche = $_POST['recherche'];
+	$nom = $_POST['recherche'];
 	//Requete de recherche
-	$req = "SELECT * FROM rapportvisite WHERE rapDate = '$dateDeRecherche' ORDER BY rapNum";
+	$req = "SELECT * FROM praticien WHERE praNom = '$nom' ";
 	$rep = $connexion->query($req);
 	$ligne = $rep->fetchAll(PDO::FETCH_OBJ);//Permet de retourner un objet
 
-	//Affhichage de la date
-	echo "<h2>Voici le(s) rapport(s) pour le $dateDeRecherche : </h2>";
+	//Affhichage du nom du practicien
+	foreach ($ligne as $key) {
+		echo "<h2>Voici les informations pour ". $key->praNom . " " .$key->praPrenom . " : </h2>";
+	}
+
 
 	 ?>
 
 
 	<table>
 		<tr>
-			<th>Matricule du visiteur</th>
+			<th>Nom</th>
 			<?php
 			foreach ($ligne as $key){
 				?>
-					<td><?= $key->visMatricule ?></td>
+					<td><?= $key->praNom ?></td>
 				<?php
 			}
 			?>
 		</tr>
 		<tr>
-			<th>Numero de rapport</th>
+			<th>Prenom</th>
 			<?php
 			foreach ($ligne as $key){
 				?>
-					<td><?= $key->rapNum ?></td>
+					<td><?= $key->praPrenom ?></td>
 				<?php
 			}
 			?>
 		</tr>
 		<tr>
-			<th>Practicien</th>
+			<th>Type de praticien</th>
 			<?php
 			foreach ($ligne as $key){
-				?>
-					<td><?= $key->praNum ?></td>
-				<?php
-			}
-			?>
-		</tr>
-		<tr>
-			<th>Motif du rapport</th>
-			<?php
-			foreach ($ligne as $key){
-				?>
-					<td><?= $key->rapMotif  ?></td>
-				<?php
-			}
-			?>
-		</tr>
-		<tr>
-			<th>Produit 1 </th>
-			<?php
-			foreach ($ligne as $key){
-				?>
-					<td><?= $key->prod1 ?></td>
-				<?php
-			}
-			?>
-		</tr>
-		<tr>
-			<th>Produit 2 </th>
-			<?php
-			foreach ($ligne as $key){
-				?>
-					<td><?= $key->prod2 ?></td>
-				<?php
-			}
-			?>
-		</tr>
-		<tr>
-			<th>Coefficient de confiance </th>
-			<?php
-			foreach ($ligne as $key){
-				?>
-					<td><?= $key->CoeffCOnf ?></td>
-				<?php
-			}
-			?>
-		</tr>
-		<tr>
-			<th>Bilan du rapport </th>
-			<?php
-			foreach ($ligne as $key){
-				?>
-					<td><?= $key->rapBilan ?></td>
-				<?php
-			}
-			?>
-		</tr>
+				$code = $key->typCode;
 
+				//Requete pour recuperer le code de famille de practicien
+				$reqCode = "SELECT typLibelle FROM typepraticien WHERE typCode = '$code'";
+
+				$repCode = $connexion->query($reqCode);
+				$ligneCode = $repCode->fetch();
+				?>
+					<td><?= $ligneCode['0']; ?></td>
+				<?php
+			}
+			?>
+		</tr>
 		<tr>
-			<th>Options </th>
+			<th>Lieu de Travail</th>
+			<?php
+			foreach ($ligne as $key){
+				$code = $key->typCode;
+
+				//Requete pour recuperer le code de famille de practicien
+				$reqCode = "SELECT typLieu FROM typepraticien WHERE typCode = '$code'";
+
+				$repCode = $connexion->query($reqCode);
+				$ligneCode = $repCode->fetch();
+				?>
+					<td><?= $ligneCode['0']; ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Adresse</th>
 			<?php
 			foreach ($ligne as $key){
 				?>
-					<td><a href="recupConsultation.php?id=<?= $key->id ?>">Modifier</a></td>
+					<td><?= $key->praAdresse ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Code Postal</th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->praCp ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Ville</th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->praVille  ?></td>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+			<th>Coefficient de notoriété</th>
+			<?php
+			foreach ($ligne as $key){
+				?>
+					<td><?= $key->praCoefnotoriete ?></td>
 				<?php
 			}
 			?>
