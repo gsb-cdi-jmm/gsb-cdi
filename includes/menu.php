@@ -18,7 +18,7 @@
                     <li><a href="formRAPPORT_VISITE.php">Nouveaux</a></li>
                     <li><a href="consultation.php">Consulter</a></li>
                 </ul>
-                <li><a href="deconnexion.php" onclick="confirm('Voulez vous vous deconnecter?')">Se deconnecter</a></li>
+                <li><a href="deconnexion.php" onclick="javascript: return deconnexion()">Se deconnecter</a></li>
             </ul>
 
         <?php endif; ?>
